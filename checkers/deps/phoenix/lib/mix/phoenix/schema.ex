@@ -72,6 +72,7 @@ defmodule Mix.Phoenix.Schema do
         {key, _} -> key
         nil -> :some_field
       end
+    route_helper = if web_path, do: "#{web_path}_#{singular}", else: singular
 
     %Schema{
       opts: opts,
@@ -102,7 +103,7 @@ defmodule Mix.Phoenix.Schema do
       },
       web_namespace: web_namespace,
       web_path: web_path,
-      route_helper: route_helper(web_path, singular),
+      route_helper: route_helper,
       sample_id: sample_id(opts),
       context_app: ctx_app,
       generate?: generate?}
@@ -312,11 +313,5 @@ defmodule Mix.Phoenix.Schema do
     else
       -1
     end
-  end
-
-  defp route_helper(web_path, singular) do
-    "#{web_path}_#{singular}"
-    |> String.trim_leading("_")
-    |> String.replace("/", "_")
   end
 end

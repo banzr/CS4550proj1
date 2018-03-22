@@ -60,28 +60,12 @@ defmodule Phoenix.HTML.Link do
 
   ## CSRF Protection
 
-  By default, CSRF tokens are generated through `Plug.CSRFProtection`.
-  """
-  @valid_uri_schemes [
-    "http:",
-    "https:",
-    "ftp:",
-    "ftps:",
-    "mailto:",
-    "news:",
-    "irc:",
-    "gopher:",
-    "nntp:",
-    "feed:",
-    "telnet:",
-    "mms:",
-    "rtsp:",
-    "svn:",
-    "tel:",
-    "fax:",
-    "xmpp:"
-  ]
+  By default, CSRF tokens are generated through `Plug.CSRFProtection`. You
+  can customize the CSRF token generation by configuring your own MFA:
 
+      config :phoenix_html, csrf_token_generator: {MyGenerator, :get_token, []}
+
+  """
   def link(text, opts)
 
   def link(opts, do: contents) when is_list(opts) do
@@ -94,14 +78,13 @@ defmodule Phoenix.HTML.Link do
 
   def link(text, opts) do
     {to, opts} = pop_required_option!(opts, :to, "expected non-nil value for :to in link/2")
-    to = valid_destination!(to, "link/2")
     {method, opts} = Keyword.pop(opts, :method, :get)
 
     if method == :get do
       opts = skip_csrf(opts)
       content_tag(:a, text, [href: to] ++ opts)
     else
-      {csrf_data, opts} = csrf_data(to, opts)
+      {csrf_data, opts} = csrf_data(opts)
       opts = Keyword.put_new(opts, :rel, "nofollow")
       content_tag(:a, text, [href: "#", data: [method: method, to: to] ++ csrf_data] ++ opts)
     end
@@ -138,7 +121,7 @@ defmodule Phoenix.HTML.Link do
 
   All other options are forwarded to the underlying button input.
   """
-  def button(opts, do: contents) do
+  def button(opts, [do: contents]) do
     button(contents, opts)
   end
 
@@ -146,13 +129,11 @@ defmodule Phoenix.HTML.Link do
     {to, opts} = pop_required_option!(opts, :to, "option :to is required in button/2")
     {method, opts} = Keyword.pop(opts, :method, :post)
 
-    to = valid_destination!(to, "button/2")
-
     if method == :get do
       opts = skip_csrf(opts)
       content_tag(:button, text, [data: [method: method, to: to]] ++ opts)
     else
-      {csrf_data, opts} = csrf_data(to, opts)
+      {csrf_data, opts} = csrf_data(opts)
       content_tag(:button, text, [data: [method: method, to: to] ++ csrf_data] ++ opts)
     end
   end
@@ -161,17 +142,18 @@ defmodule Phoenix.HTML.Link do
     Keyword.delete(opts, :csrf_token)
   end
 
-  defp csrf_data(to, opts) do
-    case Keyword.pop(opts, :csrf_token, true) do
-      {csrf, opts} when is_binary(csrf) ->
-        {[csrf: csrf], opts}
-
-      {true, opts} ->
-        {[csrf: Plug.CSRFProtection.get_csrf_token_for(to)], opts}
-
-      {false, opts} ->
-        {[], opts}
+  defp csrf_data(opts) do
+    {csrf_token?, opts} = Keyword.pop(opts, :csrf_token, true)
+    if csrf_token = csrf_token? && get_csrf_token() do
+      {[csrf: csrf_token], opts}
+    else
+      {[], opts}
     end
+  end
+
+  defp get_csrf_token do
+    {mod, fun, args} = Application.fetch_env!(:phoenix_html, :csrf_token_generator)
+    apply(mod, fun, args)
   end
 
   defp pop_required_option!(opts, key, error_message) do
@@ -182,32 +164,5 @@ defmodule Phoenix.HTML.Link do
     end
 
     {value, opts}
-  end
-
-  defp valid_destination!({:safe, to}, context) do
-    {:safe, valid_string_destination!(IO.iodata_to_binary(to), context)}
-  end
-
-  defp valid_destination!({other, to}, _context) when is_atom(other) do
-    [Atom.to_string(other), ?:, to]
-  end
-
-  defp valid_destination!(to, context) do
-    valid_string_destination!(IO.iodata_to_binary(to), context)
-  end
-
-  for scheme <- @valid_uri_schemes do
-    defp valid_string_destination!(unquote(scheme) <> _ = string, _context), do: string
-  end
-
-  defp valid_string_destination!(to, context) do
-    if String.contains?(to, ":") do
-      raise ArgumentError, """
-      unsupported scheme given to #{context}. In case you want to link to an
-      unknown or unsafe scheme, such as javascript, use a tuple: {:javascript, rest}
-      """
-    else
-      to
-    end
   end
 end

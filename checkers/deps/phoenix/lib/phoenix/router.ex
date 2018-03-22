@@ -349,10 +349,10 @@ defmodule Phoenix.Router do
     end
   end
 
-  defp build_match({route, exprs}) do
+  defp build_match({_route, exprs}) do
     {conn_block, pipelines, dispatch} = exprs.route_match
 
-    quote line: route.line do
+    quote do
       @doc false
       def __match_route__(var!(conn), unquote(exprs.verb_match), unquote(exprs.path),
                  unquote(exprs.host)) do
@@ -387,22 +387,17 @@ defmodule Phoenix.Router do
     Generates a route to handle a #{verb} request to the given path.
     """
     defmacro unquote(verb)(path, plug, plug_opts, options \\ []) do
-      add_route(:match, unquote(verb), path, plug, plug_opts, options)
+      verb = unquote(verb)
+      quote bind_quoted: binding() do
+        match(verb, path, plug, plug_opts, options)
+      end
     end
   end
 
   defp add_route(kind, verb, path, plug, plug_opts, options) do
     quote do
-      @phoenix_routes Scope.route(
-        __ENV__.line,
-        __ENV__.module,
-        unquote(kind),
-        unquote(verb),
-        unquote(path),
-        unquote(plug),
-        unquote(plug_opts),
-        unquote(options)
-      )
+      @phoenix_routes Scope.route(__MODULE__, unquote(kind), unquote(verb), unquote(path),
+                                  unquote(plug), unquote(plug_opts), unquote(options))
     end
   end
 

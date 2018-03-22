@@ -101,7 +101,7 @@ defmodule Plug.Router do
         plug :match
         plug Plug.Parsers, parsers: [:json],
                            pass:  ["application/json"],
-                           json_decoder: Jason
+                           json_decoder: Poison
         plug :dispatch
 
         post "/hello" do
@@ -173,9 +173,17 @@ defmodule Plug.Router do
         send_resp(conn, 200, "hello world")
       end
 
-  This means guards can be given to `match`:
+  This opens up a few possibilities. First, guards can be given
+  to `match`:
 
       match "/foo/bar/:baz" when size(baz) <= 3, via: :get do
+        send_resp(conn, 200, "hello world")
+      end
+
+  Second, a list of split paths (which is the compiled result) is
+  also allowed:
+
+      match ["foo", "bar", baz], via: :get do
         send_resp(conn, 200, "hello world")
       end
 
@@ -205,32 +213,18 @@ defmodule Plug.Router do
 
       @doc false
       def dispatch(%Plug.Conn{assigns: assigns} = conn, _opts) do
-        {_path, fun} = Map.fetch!(conn.private, :plug_route)
-        fun.(conn)
+        Map.get(conn.private, :plug_route).(conn)
       end
 
-      defoverridable match: 2, dispatch: 2
+      defoverridable [match: 2, dispatch: 2]
     end
   end
 
   @doc false
-  defmacro __before_compile__(env) do
-    unless Module.defines?(env.module, {:do_match, 4}) do
-      raise "no routes defined in module #{inspect(env.module)} using Plug.Router"
-    end
-
+  defmacro __before_compile__(_env) do
     quote do
       import Plug.Router, only: []
     end
-  end
-
-  @doc """
-  Returns the path of the route that the request was matched to.
-  """
-  @spec match_path(Plug.Conn.t()) :: String.t()
-  def match_path(%Plug.Conn{} = conn) do
-    {path, _fun} = Map.fetch!(conn.private, :plug_route)
-    path
   end
 
   ## Match
@@ -358,7 +352,7 @@ defmodule Plug.Router do
       forward "/foo/:bar/qux", to: FooPlug
 
   Here, a request to `/foo/BAZ/qux` will be forwarded to the `FooPlug`
-  plug, which will receive what it will see as a request to `/`,
+  plug, which will receive what it will see as a request to `/qux`,
   and `conn.params["bar"]` will be set to `"BAZ"`.
 
   Some other examples:
@@ -369,7 +363,7 @@ defmodule Plug.Router do
   """
   defmacro forward(path, options) when is_binary(path) do
     quote bind_quoted: [path: path, options: options] do
-      {target, options} = Keyword.pop(options, :to)
+      {target, options}       = Keyword.pop(options, :to)
       {options, plug_options} = Keyword.split(options, [:host, :private, :assigns])
       plug_options = Keyword.get(plug_options, :init_opts, plug_options)
 
@@ -378,7 +372,7 @@ defmodule Plug.Router do
       end
 
       @plug_forward_target target
-      @plug_forward_opts target.init(plug_options)
+      @plug_forward_opts   target.init(plug_options)
 
       # Delegate the matching to the match/3 macro along with the options
       # specified by Keyword.split/2.
@@ -398,25 +392,12 @@ defmodule Plug.Router do
   @doc false
   def __route__(method, path, guards, options) do
     {method, guards} = build_methods(List.wrap(method || options[:via]), guards)
-    {vars, match} = Plug.Router.Utils.build_path_match(path)
+    {vars, match}    = Plug.Router.Utils.build_path_match(path)
     params_match = Plug.Router.Utils.build_path_params_match(vars)
-    private = extract_merger(options, :private)
-    assigns = extract_merger(options, :assigns)
+    private    = extract_merger(options, :private)
+    assigns    = extract_merger(options, :assigns)
     host_match = Plug.Router.Utils.build_host_match(options[:host])
     {quote(do: conn), method, match, params_match, host_match, guards, private, assigns}
-  end
-
-  @doc false
-  def __put_route__(conn, path, fun) do
-    Plug.Conn.put_private(conn, :plug_route, {append_match_path(conn, path), fun})
-  end
-
-  defp append_match_path(%Plug.Conn{private: %{plug_route: {base_path, _}}}, path) do
-    base_path <> path
-  end
-
-  defp append_match_path(%Plug.Conn{}, path) do
-    path
   end
 
   # Entry point for both forward and match that is actually
@@ -426,19 +407,15 @@ defmodule Plug.Router do
       cond do
         Keyword.has_key?(contents, :do) ->
           {contents[:do], options}
-
         Keyword.has_key?(options, :do) ->
           Keyword.pop(options, :do)
-
         options[:to] ->
           {to, options} = Keyword.pop(options, :to)
           {init_opts, options} = Keyword.pop(options, :init_opts, [])
-
           body =
             quote do
               @plug_router_to.call(var!(conn), @plug_router_init)
             end
-
           options =
             quote do
               to = unquote(to)
@@ -446,27 +423,22 @@ defmodule Plug.Router do
               @plug_router_init to.init(unquote(init_opts))
               unquote(options)
             end
-
           {body, options}
-
         true ->
           raise ArgumentError, message: "expected one of :to or :do to be given as option"
       end
 
     {path, guards} = extract_path_and_guards(expr)
 
-    quote bind_quoted: [
-            method: method,
-            path: path,
-            options: options,
-            guards: Macro.escape(guards, unquote: true),
-            body: Macro.escape(body, unquote: true)
-          ] do
+    quote bind_quoted: [method: method,
+                        path: path,
+                        options: options,
+                        guards: Macro.escape(guards, unquote: true),
+                        body: Macro.escape(body, unquote: true)] do
       route = Plug.Router.__route__(method, path, guards, options)
       {conn, method, match, params, host, guards, private, assigns} = route
 
-      defp do_match(unquote(conn), unquote(method), unquote(match), unquote(host))
-           when unquote(guards) do
+      defp do_match(unquote(conn), unquote(method), unquote(match), unquote(host)) when unquote(guards) do
         unquote(private)
         unquote(assigns)
 
@@ -474,11 +446,10 @@ defmodule Plug.Router do
           %Plug.Conn.Unfetched{} -> unquote({:%{}, [], params})
           fetched -> Map.merge(fetched, unquote({:%{}, [], params}))
         end
+        conn = update_in unquote(conn).params, merge_params
+        conn = update_in conn.path_params, merge_params
 
-        conn = update_in(unquote(conn).params, merge_params)
-        conn = update_in(conn.path_params, merge_params)
-
-        Plug.Router.__put_route__(conn, unquote(path), fn var!(conn) -> unquote(body) end)
+        Plug.Conn.put_private(conn, :plug_route, fn var!(conn) -> unquote(body) end)
       end
     end
   end
@@ -486,7 +457,7 @@ defmodule Plug.Router do
   defp extract_merger(options, key) when is_list(options) do
     if option = Keyword.get(options, key) do
       quote do
-        conn = update_in(conn.unquote(key), &Map.merge(&1, unquote(Macro.escape(option))))
+        conn = update_in conn.unquote(key), &Map.merge(&1, unquote(Macro.escape(option)))
       end
     end
   end
@@ -502,14 +473,14 @@ defmodule Plug.Router do
   end
 
   defp build_methods(methods, guards) do
-    methods = Enum.map(methods, &Plug.Router.Utils.normalize_method(&1))
-    var = quote do: method
-    guards = join_guards(quote(do: unquote(var) in unquote(methods)), guards)
+    methods = Enum.map methods, &Plug.Router.Utils.normalize_method(&1)
+    var     = quote do: method
+    guards  = join_guards(quote(do: unquote(var) in unquote(methods)), guards)
     {var, guards}
   end
 
   defp join_guards(fst, true), do: fst
-  defp join_guards(fst, snd), do: quote(do: unquote(fst) and unquote(snd))
+  defp join_guards(fst, snd),  do: (quote do: unquote(fst) and unquote(snd))
 
   # Extract the path and guards from the path.
   defp extract_path_and_guards({:when, _, [path, guards]}), do: {extract_path(path), guards}

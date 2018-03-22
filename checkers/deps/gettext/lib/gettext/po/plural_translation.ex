@@ -30,17 +30,15 @@ defmodule Gettext.PO.PluralTranslation do
   """
 
   @type t :: %__MODULE__{
-          msgid: [binary],
-          msgid_plural: [binary],
-          msgstr: %{non_neg_integer => [binary]},
-          comments: [binary],
-          extracted_comments: [binary],
-          references: [{binary, pos_integer}],
-          flags: MapSet.t(),
-          po_source_line: pos_integer
-        }
-
-  @enforce_keys [:msgid, :msgid_plural]
+    msgid: [binary],
+    msgid_plural: [binary],
+    msgstr: %{non_neg_integer => [binary]},
+    comments: [binary],
+    extracted_comments: [binary],
+    references: [{binary, pos_integer}],
+    flags: MapSet.t,
+    po_source_line: pos_integer,
+  }
 
   defstruct msgid: nil,
             msgid_plural: nil,
@@ -48,6 +46,6 @@ defmodule Gettext.PO.PluralTranslation do
             comments: [],
             extracted_comments: [],
             references: [],
-            flags: MapSet.new(),
+            flags: MapSet.new,
             po_source_line: nil
 end

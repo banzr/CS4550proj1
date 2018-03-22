@@ -90,7 +90,7 @@ defmodule Phoenix.Transports.WebSocket do
           {:ok, socket} ->
             {:ok, conn, {__MODULE__, {socket, opts}}}
           :error ->
-            conn = send_resp(conn, 403, "")
+            send_resp(conn, 403, "")
             {:error, conn}
         end
       %{halted: true} = conn ->
@@ -99,7 +99,7 @@ defmodule Phoenix.Transports.WebSocket do
   end
 
   def init(conn, _) do
-    conn = send_resp(conn, :bad_request, "")
+    send_resp(conn, :bad_request, "")
     {:error, conn}
   end
 

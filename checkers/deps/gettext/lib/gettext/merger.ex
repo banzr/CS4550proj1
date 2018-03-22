@@ -18,6 +18,17 @@ defmodule Gettext.Merger do
   """
 
   @doc """
+  Merges a PO file with a POT file given their paths.
+
+  This function returns the contents (as iodata) of the merged file, which will
+  be written to a PO file.
+  """
+  @spec merge_files(Path.t, Path.t, Keyword.t, Keyword.t) :: iodata
+  def merge_files(po_file, pot_file, opts, gettext_config \\ []) do
+    merge(PO.parse_file!(po_file), PO.parse_file!(pot_file), opts) |> PO.dump(gettext_config)
+  end
+
+  @doc """
   Merges two `Gettext.PO` structs representing a PO file and an updated POT (or
   PO) file into a new `Gettext.PO` struct.
 
@@ -49,96 +60,87 @@ defmodule Gettext.Merger do
         by the references in the POT file
 
   """
-  @spec merge(PO.t(), PO.t(), String.t(), Keyword.t()) :: PO.t()
-  def merge(%PO{} = old, %PO{} = new, locale, opts) when is_binary(locale) and is_list(opts) do
-    opts = put_plural_forms_opt(opts, old.headers, locale)
-
+  @spec merge(PO.t, PO.t, Keyword.t) :: PO.t
+  def merge(%PO{} = old, %PO{} = new, opts) do
     %PO{
       top_of_the_file_comments: old.top_of_the_file_comments,
       headers: old.headers,
       file: old.file,
-      translations: merge_translations(old.translations, new.translations, opts)
+      translations: merge_translations(old.translations, new.translations, opts),
     }
   end
 
   defp merge_translations(old, new, opts) do
-    fuzzy? = Keyword.fetch!(opts, :fuzzy)
-    fuzzy_threshold = Keyword.fetch!(opts, :fuzzy_threshold)
-    plural_forms = Keyword.fetch!(opts, :plural_forms)
-
+    # First, we convert the list of old translations into a map for
+    # constant-time lookup.
     old = Map.new(old, &{PO.Translations.key(&1), &1})
 
-    Enum.map(new, fn t ->
-      key = PO.Translations.key(t)
-      t = adjust_number_of_plural_forms(t, plural_forms)
+    # Then, we do a first pass through the list of new translation and we mark
+    # all exact matches as {key, translation, exact_match}, taking the exact matches
+    # out of `old` at the same time.
+    {new, old} =
+      Enum.map_reduce(new, old, fn t, old ->
+        key = PO.Translations.key(t)
+        {same, old} = Map.pop(old, key)
+        {{key, t, same}, old}
+      end)
 
-      case Map.fetch(old, key) do
-        {:ok, exact_match} -> merge_two_translations(exact_match, t)
-        :error when fuzzy? -> maybe_merge_fuzzy(t, old, key, fuzzy_threshold)
-        :error -> t
-      end
-    end)
+    # Now, tuples like {key, translation, nil} identify translations with no
+    # exact match. For those translations, we look for a fuzzy match. We ditch
+    # the obsolete translations altogether.
+    {new, _obsolete} =
+      Enum.map_reduce(new, old, fn
+        {key, t, nil}, old ->
+          if Keyword.fetch!(opts, :fuzzy) do
+            find_fuzzy_match(key, t, old, Keyword.fetch!(opts, :fuzzy_threshold))
+          else
+            {t, old}
+          end
+        {_, t, exact_match}, old ->
+          {merge_two_translations(exact_match, t), old}
+      end)
+
+    new
   end
 
-  defp adjust_number_of_plural_forms(%PluralTranslation{} = t, plural_forms)
-       when plural_forms > 0 do
-    new_msgstr = Map.new(0..(plural_forms - 1), &{&1, [""]})
-    %{t | msgstr: new_msgstr}
-  end
-
-  defp adjust_number_of_plural_forms(%Translation{} = t, _plural_forms) do
-    t
-  end
-
-  defp maybe_merge_fuzzy(t, old, key, fuzzy_threshold) do
-    if matched = find_fuzzy_match(old, key, fuzzy_threshold) do
-      Fuzzy.merge(t, matched)
-    else
-      t
-    end
-  end
-
-  defp find_fuzzy_match(translations, key, threshold) do
+  # Returns {fuzzy_matched_translation, updated_old_translations} if a match is
+  # found, otherwise {original_translation, old_translations}.
+  defp find_fuzzy_match(key, target, old_translations, threshold) do
     matcher = Fuzzy.matcher(threshold)
 
     candidates =
-      for {k, t} <- translations, match = matcher.(k, key), match != :nomatch, do: {t, match}
+      old_translations
+      |> Enum.map(fn {k, t} -> {k, t, matcher.(k, key)} end)
+      |> Enum.reject(&match?({_, _, :nomatch}, &1))
 
     if candidates == [] do
-      nil
+      {target, old_translations}
     else
-      {t, _match} = Enum.max_by(candidates, fn {_t, {:match, distance}} -> distance end)
-      t
+      {k, t, _} = Enum.max_by(candidates, fn {_, _, {:match, distance}} -> distance end)
+      {Fuzzy.merge(target, t), Map.delete(old_translations, k)}
     end
   end
 
-  # msgid (and msgid_plural): they're the same
-  # msgstr: new.msgstr should be empty since it comes from a POT file
-  # comments: new has no translator comments as it comes from POT
-  # extracted_comments: we should take the new most recent ones
-  # flags: we should take the new flags
-  # references: new contains the updated and most recent references
-
   defp merge_two_translations(%Translation{} = old, %Translation{} = new) do
     %Translation{
-      msgid: new.msgid,
-      msgstr: old.msgstr,
-      comments: old.comments,
+      msgid: new.msgid, # they are the same
+      msgstr: old.msgstr, # new.msgstr should be empty since it's a POT file
+      comments: old.comments, # new has no translator comments
       extracted_comments: new.extracted_comments,
       flags: new.flags,
-      references: new.references
+      references: new.references,
     }
   end
 
   defp merge_two_translations(%PluralTranslation{} = old, %PluralTranslation{} = new) do
     %PluralTranslation{
-      msgid: new.msgid,
-      msgid_plural: new.msgid_plural,
-      msgstr: old.msgstr,
-      comments: old.comments,
+      msgid: new.msgid, # they are the same
+      msgid_plural: new.msgid_plural, # they are the same
+      msgstr: old.msgstr, # new.msgstr should be empty since it's a POT file
+      comments: old.comments, # new has no translator comments
       extracted_comments: new.extracted_comments,
       flags: new.flags,
-      references: new.references
+      references: new.references,
     }
   end
 
@@ -156,54 +158,34 @@ defmodule Gettext.Merger do
   over the new PO file as they're meant to be comments generated by tools or
   comments directed to developers.
   """
-  @spec new_po_file(Path.t(), Path.t(), String.t(), Keyword.t(), Keyword.t()) :: iodata
-  def new_po_file(po_file, pot_file, locale, opts, gettext_config)
-      when is_binary(locale) and is_list(opts) and is_list(gettext_config) do
+  @spec new_po_file(Path.t, Path.t, Keyword.t) :: iodata
+  def new_po_file(po_file, pot_file, gettext_config \\ []) do
     pot = PO.parse_file!(pot_file)
-    opts = put_plural_forms_opt(opts, pot.headers, locale)
-    plural_forms = Keyword.fetch!(opts, :plural_forms)
 
     po = %PO{
-      headers: headers_for_new_po_file(locale, plural_forms),
+      headers: headers_for_new_po_file(po_file),
       file: po_file,
-      translations: Enum.map(pot.translations, &prepare_new_translation(&1, plural_forms))
+      translations: strip_double_hash_comments(pot.translations),
     }
 
     [@new_po_informative_comment, PO.dump(po, gettext_config)]
   end
 
-  defp headers_for_new_po_file(locale, plural_forms) do
+  defp headers_for_new_po_file(po_file) do
     [
-      ~s(Language: #{locale}\n),
-      ~s(Plural-Forms: nplurals=#{plural_forms}\n)
+      ~s(Language: #{locale_from_path(po_file)}\n),
     ]
   end
 
-  defp prepare_new_translation(t, plural_forms) do
-    t
-    |> strip_double_hash_comments()
-    |> adjust_number_of_plural_forms(plural_forms)
+  defp locale_from_path(path) do
+    parts = Path.split(path)
+    index = Enum.find_index(parts, & &1 == "LC_MESSAGES")
+    Enum.at(parts, index - 1)
   end
 
-  defp strip_double_hash_comments(%{comments: comments} = t) do
-    %{t | comments: Enum.reject(comments, &match?("##" <> _, &1))}
-  end
-
-  defp put_plural_forms_opt(opts, headers, locale) do
-    Keyword.put_new_lazy(opts, :plural_forms, fn ->
-      read_plural_forms_from_headers(headers) || Gettext.Plural.nplurals(locale)
-    end)
-  end
-
-  defp read_plural_forms_from_headers(headers) do
-    Enum.find_value(headers, fn header ->
-      with "Plural-Forms:" <> rest <- header,
-           "nplurals=" <> rest <- String.trim(rest),
-           {plural_forms, _rest} <- Integer.parse(rest) do
-        plural_forms
-      else
-        _other -> nil
-      end
-    end)
+  defp strip_double_hash_comments(translations) when is_list(translations) do
+    for %{comments: comments} = t <- translations do
+      %{t | comments: Enum.reject(comments, &match?("##" <> _, &1))}
+    end
   end
 end

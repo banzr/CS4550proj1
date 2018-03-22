@@ -171,11 +171,21 @@ defmodule Phoenix.Token do
   def verify(context, salt, token, opts) when is_binary(salt) and is_binary(token) do
     secret = context |> get_key_base() |> get_secret(salt, opts)
 
+    max_age_ms =
+      if max_age_secs = opts[:max_age] do
+        trunc(max_age_secs * 1000)
+      else
+        Logger.warn ":max_age was not set on Phoenix.Token.verify/4. " <>
+                    "A max_age is recommended otherwise tokens are forever valid. " <>
+                    "Please set it to the amount of seconds the token is valid, such as 86400 (1 day)"
+        nil
+      end
+
     case MessageVerifier.verify(token, secret) do
       {:ok, message} ->
         %{data: data, signed: signed} = Plug.Crypto.safe_binary_to_term(message)
 
-        if expired?(signed, opts[:max_age]) do
+        if max_age_ms && (signed + max_age_ms) < now_ms() do
           {:error, :expired}
         else
           {:ok, data}
@@ -192,7 +202,7 @@ defmodule Phoenix.Token do
   defp get_key_base(%Plug.Conn{} = conn),
     do: conn |> Phoenix.Controller.endpoint_module() |> get_endpoint_key_base()
   defp get_key_base(%Phoenix.Socket{} = socket),
-    do: get_endpoint_key_base(socket.endpoint)
+    do: socket.endpoint.config(:secret_key_base)
   defp get_key_base(endpoint) when is_atom(endpoint),
     do: get_endpoint_key_base(endpoint)
   defp get_key_base(string) when is_binary(string) and byte_size(string) >= 20,
@@ -219,18 +229,6 @@ defmodule Phoenix.Token do
                 cache: Plug.Keys]
     KeyGenerator.generate(secret_key_base, salt, key_opts)
   end
-
-  defp expired?(_signed, :infinity), do: false
-
-  defp expired?(_signed, nil) do
-    # TODO: Default to 86400 on future releases.
-    Logger.warn ":max_age was not set on Phoenix.Token.verify/4. " <>
-                "A max_age is recommended otherwise tokens are forever valid. " <>
-                "Please set it to the amount of seconds the token is valid, such as 86400 (1 day)"
-    false
-  end
-
-  defp expired?(signed, max_age_secs), do: (signed + trunc(max_age_secs * 1000)) < now_ms()
 
   defp now_ms, do: System.system_time(:milliseconds)
 end

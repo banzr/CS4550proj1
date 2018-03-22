@@ -93,7 +93,7 @@ defmodule Gettext do
   backends.
 
   Similarly, `Gettext.get_locale/0` gets the locale for all backends in the
-  current process. `Gettext.get_locale/1` gets the locale of a specific backend
+  current process. `Gettext.get_locale/`1 gets the locale of a specific backend
   for the current process. Check their documentation for more information.
 
   Locales are expressed as strings (like `"en"` or `"fr"`); they can be
@@ -492,19 +492,10 @@ defmodule Gettext do
     @moduledoc """
     An error message raised for missing bindings errors.
     """
-
     @enforce_keys [:backend, :domain, :locale, :msgid, :missing]
     defexception [:backend, :domain, :locale, :msgid, :missing]
 
-    @type t() :: %__MODULE__{}
-
-    def message(%{
-          backend: backend,
-          domain: domain,
-          locale: locale,
-          msgid: msgid,
-          missing: missing
-        }) do
+    def message(%{backend: backend, domain: domain, locale: locale, msgid: msgid, missing: missing}) do
       "missing Gettext bindings: #{inspect(missing)} (backend #{inspect(backend)}, " <>
         "locale #{inspect(locale)}, domain #{inspect(domain)}, msgid #{inspect(msgid)})"
     end
@@ -512,7 +503,7 @@ defmodule Gettext do
 
   @type locale :: binary
   @type backend :: module
-  @type bindings :: %{} | Keyword.t()
+  @type bindings :: %{} | Keyword.t
 
   @doc false
   defmacro __using__(opts) do
@@ -572,10 +563,10 @@ defmodule Gettext do
 
   """
   @spec put_locale(locale) :: nil
-  def put_locale(locale) when is_binary(locale), do: Process.put(Gettext, locale)
-
+  def put_locale(locale) when is_binary(locale),
+    do: Process.put(Gettext, locale)
   def put_locale(locale),
-    do: raise(ArgumentError, "put_locale/1 only accepts binary locales, got: #{inspect(locale)}")
+    do: raise ArgumentError, "put_locale/1 only accepts binary locales, got: #{inspect(locale)}"
 
   @doc """
   Gets the locale for the current process and the given backend.
@@ -597,13 +588,10 @@ defmodule Gettext do
     cond do
       locale = Process.get(backend) ->
         locale
-
       global_locale = Process.get(Gettext) ->
         global_locale
-
       default_locale = get_default_backend_locale(backend) ->
         default_locale
-
       true ->
         # If this is not set by the user, it's still set in mix.exs (to "en").
         Application.fetch_env!(:gettext, :default_locale)
@@ -630,10 +618,10 @@ defmodule Gettext do
 
   """
   @spec put_locale(backend, locale) :: nil
-  def put_locale(backend, locale) when is_binary(locale), do: Process.put(backend, locale)
-
+  def put_locale(backend, locale) when is_binary(locale),
+    do: Process.put(backend, locale)
   def put_locale(_backend, locale),
-    do: raise(ArgumentError, "put_locale/2 only accepts binary locales, got: #{inspect(locale)}")
+    do: raise ArgumentError, "put_locale/2 only accepts binary locales, got: #{inspect(locale)}"
 
   @doc """
   Returns the translation of the given string in the given domain.
@@ -725,8 +713,9 @@ defmodule Gettext do
   end
 
   def dngettext(backend, domain, msgid, msgid_plural, n, bindings)
-      when is_atom(backend) and is_binary(domain) and is_binary(msgid) and is_binary(msgid_plural) and
-             is_integer(n) and n >= 0 and is_map(bindings) do
+      when is_atom(backend) and is_binary(domain) and is_binary(msgid) and
+           is_binary(msgid_plural) and is_integer(n) and n >= 0 and
+           is_map(bindings) do
     locale = get_locale(backend)
     result = backend.lngettext(locale, domain, msgid, msgid_plural, n, bindings)
     handle_backend_result(result, backend, locale, domain, msgid)
@@ -872,21 +861,14 @@ defmodule Gettext do
     string
   end
 
-  defp handle_backend_result(
-         {:missing_bindings, incomplete, missing},
-         backend,
-         locale,
-         domain,
-         msgid
-       ) do
+  defp handle_backend_result({:missing_bindings, incomplete, missing}, backend, locale, domain, msgid) do
     exception = %MissingBindingsError{
       backend: backend,
       locale: locale,
       domain: domain,
       msgid: msgid,
-      missing: missing
+      missing: missing,
     }
-
     backend.handle_missing_bindings(exception, incomplete)
   end
 

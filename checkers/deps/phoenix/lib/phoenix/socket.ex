@@ -174,7 +174,7 @@ defmodule Phoenix.Socket do
       for {name, {mod, conf}} <- transports do
         quote do
           def __transport__(unquote(name)) do
-            {unquote(mod), unquote(Macro.escape(conf))}
+            {unquote(mod), unquote(conf)}
           end
         end
       end
@@ -264,7 +264,7 @@ defmodule Phoenix.Socket do
     # Tear the alias to simply store the root in the AST.
     # This will make Elixir unable to track the dependency
     # between endpoint <-> socket and avoid recompiling the
-    # endpoint (alongside the whole project) whenever the
+    # endpoint (alongside the whole project ) whenever the
     # socket changes.
     module = tear_alias(module)
 
@@ -286,8 +286,13 @@ defmodule Phoenix.Socket do
 
   ## Examples
 
+      # customize default `:websocket` transport options
       transport :websocket, Phoenix.Transports.WebSocket,
         timeout: 10_000
+
+      # define separate transport, using websocket handler
+      transport :websocket_slow_clients, Phoenix.Transports.WebSocket,
+        timeout: 60_000
 
   """
   defmacro transport(name, module, config \\ []) do
@@ -300,16 +305,9 @@ defmodule Phoenix.Socket do
   @doc false
   def __transport__(transports, name, module, user_conf) do
     defaults = module.default_config()
-
-    unless name in [:websocket, :longpoll] do
-      IO.warn "The transport/3 macro accepts only websocket and longpoll for transport names. " <>
-              "Other names are deprecated. If you want multiple websocket/longpoll endpoints, " <>
-              "define multiple sockets instead"
-    end
-
     conf =
       user_conf
-      |> normalize_serializer_conf(name, module, defaults[:serializer] || [])
+      |> normalize_serializer_conf(name, module, defaults[:serializer])
       |> merge_defaults(defaults)
 
     Map.update(transports, name, {module, conf}, fn {dup_module, _} ->
@@ -321,42 +319,31 @@ defmodule Phoenix.Socket do
 
   defp normalize_serializer_conf(conf, name, transport_mod, default) do
     update_in(conf, [:serializer], fn
-      nil ->
-        precompile_serializers(default)
+      nil -> default
 
       Phoenix.Transports.LongPollSerializer = serializer ->
         warn_serializer_deprecation(name, transport_mod, serializer)
-        precompile_serializers(default)
+        default
+
 
       Phoenix.Transports.WebSocketSerializer = serializer ->
         warn_serializer_deprecation(name, transport_mod, serializer)
-        precompile_serializers(default)
+        default
 
-      [_ | _] = serializer ->
-        precompile_serializers(serializer)
+      [_ | _] = serializer -> serializer
 
       serializer when is_atom(serializer) ->
         warn_serializer_deprecation(name, transport_mod, serializer)
-        precompile_serializers([{serializer, "~> 1.0.0"}])
+        [{serializer, "~> 1.0.0"}]
     end)
   end
-
   defp warn_serializer_deprecation(name, transport_mod, serializer) do
-    IO.warn """
-    passing a serializer module to the transport macro is deprecated.
+    IO.puts :stderr, """
+    [warning] passing a serializer module to the transport macro is deprecated.
     Use a list with version requirements instead. For example:
 
         transport :#{name}, #{inspect transport_mod},
           serializer: [{#{inspect serializer}, "~> 1.0.0"}]
     """
-  end
-
-  defp precompile_serializers(serializers) do
-    for {module, requirement} <- serializers do
-      case Version.parse_requirement(requirement) do
-        {:ok, requirement} -> {module, requirement}
-        :error -> Version.match?("1.0.0", requirement)
-      end
-    end
   end
 end

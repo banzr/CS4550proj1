@@ -1,0 +1,12 @@
+<h1>Memory Game</h1>
+
+<div class="row">
+  <div class="col">
+    <h1 id="index-page">Join a Game</h1>
+    Game Name:<br>
+    <input type="text" id="gameName">
+    <br>
+    <button onClick="location.href = '/game/'+(document.getElementById('gameName').value || 'demo');" id="join">Join</button>
+    <p><a href="/game/demo">Demo</a></p>
+  </div>
+</div>

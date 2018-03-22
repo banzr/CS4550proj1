@@ -195,7 +195,7 @@ defmodule Phoenix.Channel.Server do
         :ignore
       other ->
         raise """
-        channel #{inspect socket.channel}.join/3 is expected to return one of:
+        Channel join is expected to return one of:
 
             {:ok, Socket.t} |
             {:ok, reply :: map, Socket.t} |

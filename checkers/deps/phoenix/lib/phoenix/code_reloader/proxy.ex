@@ -5,7 +5,7 @@ defmodule Phoenix.CodeReloader.Proxy do
   use GenServer
 
   def start() do
-    GenServer.start(__MODULE__, :ok)
+    GenServer.start(__MODULE__, "")
   end
 
   def stop(proxy) do
@@ -13,10 +13,6 @@ defmodule Phoenix.CodeReloader.Proxy do
   end
 
   ## Callbacks
-
-  def init(:ok) do
-    {:ok, ""}
-  end
 
   def handle_call(:stop, _from, output) do
     {:stop, :normal, output, output}

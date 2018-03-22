@@ -780,12 +780,12 @@ defmodule Phoenix.Controller do
     |> send_resp(conn.status || default_status, body)
   end
 
-  defp ensure_resp_content_type(%Plug.Conn{resp_headers: resp_headers} = conn, content_type) do
+  defp ensure_resp_content_type(%{resp_headers: resp_headers} = conn, content_type) do
     if List.keyfind(resp_headers, "content-type", 0) do
       conn
     else
       content_type = content_type <> "; charset=utf-8"
-      %Plug.Conn{conn | resp_headers: [{"content-type", content_type}|resp_headers]}
+      %{conn | resp_headers: [{"content-type", content_type}|resp_headers]}
     end
   end
 
@@ -916,7 +916,7 @@ defmodule Phoenix.Controller do
     end
 
     params = Map.put(conn.params, required_key, param)
-    %Plug.Conn{conn | params: params}
+    %{conn | params: params}
   end
 
   defp scrub_param(%{__struct__: mod} = struct) when is_atom(mod) do
@@ -963,12 +963,6 @@ defmodule Phoenix.Controller do
         script and style tags to be sent with proper content type
       * x-xss-protection - set to "1; mode=block" to improve XSS
         protection on both Chrome and IE
-      * x-download-options - set to noopen to instruct the browser
-        not to open a download directly in the browser, to avoid
-        HTML files rendering inline and accessing the security
-        context of the application (like critical domain cookies)
-      * x-permitted-cross-domain-policies - set to none to restrict
-        Adobe Flash Player’s access to data
 
   A custom headers map may also be given to be merged with defaults.
   """
@@ -985,9 +979,7 @@ defmodule Phoenix.Controller do
     merge_resp_headers(conn, [
       {"x-frame-options", "SAMEORIGIN"},
       {"x-xss-protection", "1; mode=block"},
-      {"x-content-type-options", "nosniff"},
-      {"x-download-options", "noopen"},
-      {"x-permitted-cross-domain-policies", "none"}
+      {"x-content-type-options", "nosniff"}
     ])
   end
 
@@ -1248,27 +1240,6 @@ defmodule Phoenix.Controller do
   """
   def get_flash(conn, key) do
     get_flash(conn)[flash_key(key)]
-  end
-
-  @doc """
-  Generates a status message from the template name.
-
-  ## Examples
-
-      iex> status_message_from_template("404.html")
-      "Not Found"
-      iex> status_message_from_template("whatever.html")
-      "Internal Server Error"
-
-  """
-  def status_message_from_template(template) do
-    template
-    |> String.split(".")
-    |> hd()
-    |> String.to_integer()
-    |> Plug.Conn.Status.reason_phrase()
-  rescue
-    _ -> "Internal Server Error"
   end
 
   @doc """

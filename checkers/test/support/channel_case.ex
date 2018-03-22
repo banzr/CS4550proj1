@@ -1,4 +1,4 @@
-defmodule CheckersWeb.ChannelCase do
+defmodule MemoryWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,16 +21,12 @@ defmodule CheckersWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint CheckersWeb.Endpoint
+      @endpoint MemoryWeb.Endpoint
     end
   end
 
 
-  setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Checkers.Repo)
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Checkers.Repo, {:shared, self()})
-    end
+  setup _tags do
     :ok
   end
 

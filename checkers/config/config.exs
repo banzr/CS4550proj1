@@ -5,22 +5,18 @@
 # is restricted to this project.
 use Mix.Config
 
-# General application configuration
-config :checkers,
-  ecto_repos: [Checkers.Repo]
-
 # Configures the endpoint
-config :checkers, CheckersWeb.Endpoint,
+config :memory, MemoryWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "KBOC08PpCtKsMnnzN2oxOV8Edfjz248++Pt/48hROi3Y0XrD75pqhKTKMQkUKTHv",
-  render_errors: [view: CheckersWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Checkers.PubSub,
+  secret_key_base: "9C/J32cAtdpBZcOPDkPgRBhArnDpMGPCAbN0u5XBuKJlS8J2i/aqXtnI6wj68YC6",
+  render_errors: [view: MemoryWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Memory.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
-  metadata: [:user_id]
+  metadata: [:request_id]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

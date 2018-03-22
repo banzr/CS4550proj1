@@ -36,10 +36,8 @@ defmodule Phoenix.HTML.Tag do
   is repeated when it is true, as expected in HTML, or
   the attribute is completely removed if it is false:
 
-      iex> safe_to_string tag(:audio, autoplay: "autoplay")
-      "<audio autoplay=\"autoplay\">"
       iex> safe_to_string tag(:audio, autoplay: true)
-      "<audio autoplay>"
+      "<audio autoplay=\"autoplay\">"
       iex> safe_to_string tag(:audio, autoplay: false)
       "<audio>"
 
@@ -47,7 +45,6 @@ defmodule Phoenix.HTML.Tag do
   you can explicitly convert it to a string before.
   """
   def tag(name), do: tag(name, [])
-
   def tag(name, attrs) when is_list(attrs) do
     {:safe, [?<, to_string(name), build_attrs(name, attrs), ?>]}
   end
@@ -72,7 +69,7 @@ defmodule Phoenix.HTML.Tag do
       "<option data-foo=\"bar\" value=\"value\">Display Value</option>"
 
   """
-  def content_tag(name, do: block) when is_atom(name) do
+  def content_tag(name, [do: block]) when is_atom(name) do
     content_tag(name, block, [])
   end
 
@@ -80,7 +77,7 @@ defmodule Phoenix.HTML.Tag do
     content_tag(name, content, [])
   end
 
-  def content_tag(name, attrs, do: block) when is_atom(name) and is_list(attrs) do
+  def content_tag(name, attrs, [do: block]) when is_atom(name) and is_list(attrs) do
     content_tag(name, block, attrs)
   end
 
@@ -91,58 +88,54 @@ defmodule Phoenix.HTML.Tag do
   end
 
   defp tag_attrs([]), do: []
-
   defp tag_attrs(attrs) do
-    for a <- attrs do
-      case a do
-        {k, v} -> [?\s, k, ?=, ?", attr_escape(v), ?"]
-        k -> [?\s, k]
-      end
+    for {k, v} <- attrs do
+      [?\s, k, ?=, ?", attr_escape(v), ?"]
     end
   end
 
-  defp attr_escape({:safe, data}), do: data
-  defp attr_escape(nil), do: []
-  defp attr_escape(other) when is_binary(other), do: Plug.HTML.html_escape_to_iodata(other)
-  defp attr_escape(other), do: Phoenix.HTML.Safe.to_iodata(other)
+  defp attr_escape({:safe, data}),
+    do: data
+  defp attr_escape(nil),
+    do: []
+  defp attr_escape(other) when is_binary(other),
+    do: Plug.HTML.html_escape(other)
+  defp attr_escape(other),
+    do: Phoenix.HTML.Safe.to_iodata(other)
 
   defp nested_attrs(attr, dict, acc) do
-    Enum.reduce(dict, acc, fn {k, v}, acc ->
+    Enum.reduce dict, acc, fn {k,v}, acc ->
       attr_name = "#{attr}-#{dasherize(k)}"
-
       case is_list(v) do
-        true -> nested_attrs(attr_name, v, acc)
-        false -> [{attr_name, v} | acc]
+        true  -> nested_attrs(attr_name, v, acc)
+        false -> [{attr_name, v}|acc]
       end
-    end)
+    end
   end
 
   defp build_attrs(_tag, []), do: []
   defp build_attrs(tag, attrs), do: build_attrs(tag, attrs, [])
 
-  defp build_attrs(_tag, [], acc), do: acc |> Enum.sort() |> tag_attrs
-
-  defp build_attrs(tag, [{k, v} | t], acc) when k in @tag_prefixes and is_list(v) do
+  defp build_attrs(_tag, [], acc),
+    do: acc |> Enum.sort |> tag_attrs
+  defp build_attrs(tag, [{k, v}|t], acc) when k in @tag_prefixes and is_list(v) do
     build_attrs(tag, t, nested_attrs(dasherize(k), v, acc))
   end
-
-  defp build_attrs(tag, [{k, true} | t], acc) do
-    build_attrs(tag, t, [dasherize(k) | acc])
+  defp build_attrs(tag, [{k, true}|t], acc) do
+    k = dasherize(k)
+    build_attrs(tag, t, [{k, k}|acc])
   end
-
-  defp build_attrs(tag, [{_, false} | t], acc) do
+  defp build_attrs(tag, [{_, false}|t], acc) do
     build_attrs(tag, t, acc)
   end
-
-  defp build_attrs(tag, [{_, nil} | t], acc) do
+  defp build_attrs(tag, [{_, nil}|t], acc) do
     build_attrs(tag, t, acc)
   end
-
-  defp build_attrs(tag, [{k, v} | t], acc) do
-    build_attrs(tag, t, [{dasherize(k), v} | acc])
+  defp build_attrs(tag, [{k, v}|t], acc) do
+    build_attrs(tag, t, [{dasherize(k), v}|acc])
   end
 
-  defp dasherize(value) when is_atom(value), do: dasherize(Atom.to_string(value))
+  defp dasherize(value) when is_atom(value),   do: dasherize(Atom.to_string(value))
   defp dasherize(value) when is_binary(value), do: String.replace(value, "_", "-")
 
   @doc ~S"""
@@ -193,7 +186,11 @@ defmodule Phoenix.HTML.Tag do
 
   ## CSRF Protection
 
-  By default, CSRF tokens are generated through `Plug.CSRFProtection`.
+  By default, CSRF tokens are generated through `Plug.CSRFProtection`. You
+  can customize the CSRF token generation by configuring your own MFA:
+
+      config :phoenix_html, csrf_token_generator: {MyGenerator, :get_token, []}
+
   """
   def form_tag(action, opts \\ [])
 
@@ -204,43 +201,28 @@ defmodule Phoenix.HTML.Tag do
   def form_tag(action, opts) when is_list(opts) do
     {:safe, method} = html_escape(Keyword.get(opts, :method, "post"))
 
-    {extra, opts} =
+    {opts, extra} =
       case method do
-        "get" ->
-          {"", opts}
-
-        "post" ->
-          csrf_token_tag(
-            action,
-            Keyword.put(opts, :method, "post"),
-            ""
-          )
-
-        _ ->
-          csrf_token_tag(
-            action,
-            Keyword.put(opts, :method, "post"),
-            ~s'<input name="#{@method_param}" type="hidden" value="#{method}">'
-          )
+        "get"  -> {opts, ""}
+        "post" -> csrf_token_tag(Keyword.put(opts, :method, "post"), "")
+        _      -> csrf_token_tag(Keyword.put(opts, :method, "post"),
+                                 ~s'<input name="#{@method_param}" type="hidden" value="#{method}">')
       end
 
     {opts, extra} =
       case Keyword.pop(opts, :enforce_utf8, true) do
-        {false, opts} ->
-          {opts, extra}
-
-        {true, opts} ->
-          {Keyword.put_new(opts, :accept_charset, "UTF-8"),
-           extra <> ~s'<input name="_utf8" type="hidden" value="✓">'}
+        {false, opts} -> {opts, extra}
+        {true, opts}  -> {Keyword.put_new(opts, :accept_charset, "UTF-8"),
+                          extra <> ~s'<input name="_utf8" type="hidden" value="✓">'}
       end
 
     opts =
       case Keyword.pop(opts, :multipart, false) do
         {false, opts} -> opts
-        {true, opts} -> Keyword.put(opts, :enctype, "multipart/form-data")
+        {true, opts}  -> Keyword.put(opts, :enctype, "multipart/form-data")
       end
 
-    html_escape([tag(:form, [action: action] ++ opts), raw(extra)])
+    html_escape [tag(:form, [action: action] ++ opts), raw(extra)]
   end
 
   @doc """
@@ -255,20 +237,15 @@ defmodule Phoenix.HTML.Tag do
 
   """
   def form_tag(action, options, do: block) do
-    html_escape([form_tag(action, options), block, raw("</form>")])
+    html_escape [form_tag(action, options), block, raw("</form>")]
   end
 
-  defp csrf_token_tag(to, opts, extra) do
-    case Keyword.pop(opts, :csrf_token, true) do
-      {csrf_token, opts} when is_binary(csrf_token) ->
-        {extra <> ~s'<input name="#{@csrf_param}" type="hidden" value="#{csrf_token}">', opts}
-
-      {true, opts} ->
-        csrf_token = Plug.CSRFProtection.get_csrf_token_for(to)
-        {extra <> ~s'<input name="#{@csrf_param}" type="hidden" value="#{csrf_token}">', opts}
-
-      {false, opts} ->
-        {extra, opts}
+  defp csrf_token_tag(opts, extra) do
+    {csrf_token?, opts} = Keyword.pop(opts, :csrf_token, true)
+    if csrf_token = csrf_token? && get_csrf_token() do
+      {opts, extra <> ~s'<input name="#{@csrf_param}" type="hidden" value="#{csrf_token}">'}
+    else
+      {opts, extra}
     end
   end
 
@@ -283,14 +260,13 @@ defmodule Phoenix.HTML.Tag do
 
   """
   def csrf_meta_tag do
-    tag(
-      :meta,
-      charset: "UTF-8",
-      name: "csrf-token",
-      content: Plug.CSRFProtection.get_csrf_token(),
-      "csrf-param": @csrf_param,
-      "method-param": @method_param
-    )
+    tag :meta, charset: "UTF-8", name: "csrf-token", content: get_csrf_token(),
+               'csrf-param': @csrf_param, 'method-param': @method_param
+  end
+
+  defp get_csrf_token do
+    {mod, fun, args} = Application.fetch_env!(:phoenix_html, :csrf_token_generator)
+    apply(mod, fun, args)
   end
 
   @doc """
@@ -306,15 +282,8 @@ defmodule Phoenix.HTML.Tag do
 
   To generate a path to an image hosted in your application "priv/static",
   use `static_path/1` to get a URL with cache control parameters:
-
+  
       img_tag(static_path("logo.png"))
-      <img src="logo.png?vsn=3456789">
-
-  To generate a path to an image hosted in your application "priv/static",
-  with the `@conn` endpoint, use `static_path/2` to get a URL with 
-  cache control parameters:
-
-      img_tag(static_path(@conn, "/images/logo.png"))
       <img src="logo.png?vsn=3456789">
 
   """

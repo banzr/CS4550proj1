@@ -82,7 +82,7 @@
                         'Elixir.Phoenix.Transports.WebSocketSerializer',
                         'Elixir.Phoenix.View']},
               {registered,[]},
-              {vsn,"1.3.2"},
+              {vsn,"1.3.0"},
               {mod,{'Elixir.Phoenix',[]}},
               {applications,[kernel,stdlib,elixir,plug,poison,logger,eex,
                              phoenix_pubsub,crypto]},

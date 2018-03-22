@@ -84,7 +84,7 @@ defmodule Phoenix.Endpoint.RenderErrors do
     receive do
       @already_sent ->
         send self(), @already_sent
-        %Plug.Conn{conn | state: :sent}
+        %{conn | state: :sent}
     after
       0 ->
         render conn, kind, reason, stack, opts
@@ -96,24 +96,20 @@ defmodule Phoenix.Endpoint.RenderErrors do
   rescue
     Plug.Conn.InvalidQueryError ->
       case conn.params do
-        %Plug.Conn.Unfetched{} -> %Plug.Conn{conn | query_params: %{}, params: %{}}
-        params -> %Plug.Conn{conn | query_params: %{}, params: params}
+        %Plug.Conn.Unfetched{} -> %{conn | query_params: %{}, params: %{}}
+        params -> %{conn | query_params: %{}, params: params}
       end
   end
 
   defp maybe_fetch_format(conn, opts) do
-    # We ignore params["_format"] although we respect any already stored.
-    case conn.private do
-      %{phoenix_format: format} when is_binary(format) -> conn
-      _ -> accepts(conn, Keyword.fetch!(opts, :accepts))
-    end
+    accepts(conn, Keyword.fetch!(opts, :accepts))
   rescue
     e in Phoenix.NotAcceptableError ->
       fallback_format = Keyword.fetch!(opts, :accepts) |> List.first()
-      Logger.debug("Could not render errors due to #{Exception.message(e)}. " <>
-                   "Errors will be rendered using the first accepted format #{inspect fallback_format} as fallback. " <>
-                   "Please customize the :accepts option under the :render_errors configuration " <>
-                   "in your endpoint if you want to support other formats or choose another fallback")
+      Logger.warn("Could not render errors due to #{Exception.message(e)}. " <>
+                  "Errors will be rendered using the first accepted format #{inspect fallback_format} as fallback. " <>
+                  "Please customize the :accepts option under the :render_errors configuration " <>
+                  "in your endpoint if you want to support other formats or choose another fallback")
       put_format(conn, fallback_format)
   end
 

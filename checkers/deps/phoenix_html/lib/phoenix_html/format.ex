@@ -6,9 +6,9 @@ defmodule Phoenix.HTML.Format do
   @doc ~S"""
   Returns text transformed into HTML using simple formatting rules.
 
-  Two or more consecutive newlines `\n\n` or `\r\n\r\n` are considered as a
-  paragraph and text between them is wrapped in `<p>` tags.
-  One newline `\n` or `\r\n` is considered as a linebreak and a `<br>` tag is inserted.
+  Two or more consecutive newlines `\n\n` are considered as a paragraph
+  and text between them is wrapped in `<p>` tags.
+  One newline `\n` is considered as a linebreak and a `<br>` tag is inserted.
 
   ## Examples
 
@@ -30,29 +30,28 @@ defmodule Phoenix.HTML.Format do
     * `:insert_brs` - if `true` insert `<br>` for single line breaks (default: `true`)
 
   """
-  @spec text_to_html(Phoenix.HTML.unsafe(), Keyword.t()) :: Phoenix.HTML.safe()
+  @spec text_to_html(Phoenix.HTML.unsafe, Keyword.t) :: Phoenix.HTML.safe
   def text_to_html(string, opts \\ []) do
-    escape? = Keyword.get(opts, :escape, true)
+    escape?     = Keyword.get(opts, :escape, true)
     wrapper_tag = Keyword.get(opts, :wrapper_tag, :p)
-    attributes = Keyword.get(opts, :attributes, [])
+    attributes  = Keyword.get(opts, :attributes, [])
     insert_brs? = Keyword.get(opts, :insert_brs, true)
 
     string
     |> maybe_html_escape(escape?)
-    |> String.split(["\n\n", "\r\n\r\n"], trim: true)
+    |> String.split("\n\n", trim: true)
     |> Enum.filter(&not_blank?/1)
     |> Enum.map(&wrap_paragraph(&1, wrapper_tag, attributes, insert_brs?))
-    |> Phoenix.HTML.html_escape()
+    |> Phoenix.HTML.html_escape
   end
 
-  defp maybe_html_escape(string, true), do: Plug.HTML.html_escape(string)
+  defp maybe_html_escape(string, true),  do: Plug.HTML.html_escape(string)
   defp maybe_html_escape(string, false), do: string
 
-  defp not_blank?("\r\n" <> rest), do: not_blank?(rest)
+  defp not_blank?(" " <> rest),  do: not_blank?(rest)
   defp not_blank?("\n" <> rest), do: not_blank?(rest)
-  defp not_blank?(" " <> rest), do: not_blank?(rest)
-  defp not_blank?(""), do: false
-  defp not_blank?(_), do: true
+  defp not_blank?(""),           do: false
+  defp not_blank?(_),            do: true
 
   defp wrap_paragraph(text, tag, attributes, insert_brs?) do
     [Phoenix.HTML.Tag.content_tag(tag, insert_brs(text, insert_brs?), attributes), ?\n]
@@ -60,19 +59,15 @@ defmodule Phoenix.HTML.Format do
 
   defp insert_brs(text, false) do
     text
-    |> split_lines()
+    |> String.split("\n", trim: true)
     |> Enum.intersperse(?\s)
-    |> Phoenix.HTML.raw()
+    |> Phoenix.HTML.raw
   end
 
   defp insert_brs(text, true) do
     text
-    |> split_lines()
+    |> String.split("\n", trim: true)
     |> Enum.map(&Phoenix.HTML.raw/1)
     |> Enum.intersperse([Phoenix.HTML.Tag.tag(:br), ?\n])
-  end
-
-  defp split_lines(text) do
-    String.split(text, ["\n", "\r\n"], trim: true)
   end
 end

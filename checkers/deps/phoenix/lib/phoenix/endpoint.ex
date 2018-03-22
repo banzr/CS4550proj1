@@ -161,12 +161,6 @@ defmodule Phoenix.Endpoint do
 
           [node: ["node_modules/brunch/bin/brunch", "watch"]]
 
-      The `:cd` option can be used on a watcher to override the folder from 
-      which the watcher will run. By default this will be the project's root:
-      `File.cwd!()`
-
-          [node: ["node_Modules/brunch/bin/brunch", "watch", cd: "my_frontend"]]
-
     * `:live_reload` - configuration for the live reload option.
       Configuration requires a `:patterns` option which should be a list of
       file patterns to watch. When these files change, it will trigger a reload.
@@ -803,4 +797,3 @@ defmodule Phoenix.Endpoint do
   end
   defp tear_alias(other), do: other
 end
-
