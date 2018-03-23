@@ -9,6 +9,7 @@ defmodule MemoryWeb.GamesChannel do
       socket = socket
       |> assign(:game, game)
       |> assign(:name, name)
+      Memory.GameBackup.save(socket.assigns[:name], game)
       {:ok, %{"join" => name, "game" => Game.client_view(game)}, socket}
     else
       {:error, %{reason: "unauthorized"}}
@@ -17,13 +18,20 @@ defmodule MemoryWeb.GamesChannel do
 
   def handle_in("move", %{"id" => id, "selectedTile" => selectedTile}, socket) do
     game = Game.handle_click(socket.assigns[:game], id, selectedTile)
+    Memory.GameBackup.save(socket.assigns[:name], game)
     socket = assign(socket, :game, game)
-    {:reply, {:ok, %{"game" => Game.client_view(game)}}, socket}
+    broadcast socket, "player:position", %{game: Game.client_view(game)}
+    {:noreply, socket}
+  end
+
+  def handle_in("update_pos", %{}, socket) do
+    game = Memory.GameBackup.load(socket.assigns[:name])
+    socket = assign(socket, :game, game)
+    {:noreply, socket}
   end
 
   def handle_in("timeout", %{}, socket) do
     game = Game.handle_timeout(socket.assigns[:game])
-    Memory.GameBackup.save(socket.assigns[:name], game)
     socket = assign(socket, :game, game)
     {:reply, {:ok, %{"game" => Game.client_view(game)}}, socket}
   end

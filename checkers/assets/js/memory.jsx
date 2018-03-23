@@ -16,36 +16,67 @@ class MemoryGame extends React.Component {
       //whose turn is it: 1 for p1 and 0 for p2
       turn: 1,
       selectedTile: -1,
+      //cannot change selectedTile, for continuous jumping
+      force: false,
+      winner: -1
       };
     this.channel.join()
-      .receive("ok", this.gotView.bind(this))
+      .receive("ok", view => {
+        console.log("joined channel");
+        this.gotView(view.game);
+        this.channelHandlers(this.channel);
+      })
       .receive("error", resp => { console.log("MemoryGame Unable to join", resp) });
   }
 
-  gotView(view) {
-    this.setState(view.game, this.checkBoard(view.game.reset));
+  gotView(game) {
+    this.setState(game, this.checkBoard());
+  }
+
+  channelHandlers(channel) {
+    channel.on("player:position", ({game: game}) => {
+      console.log("shit son");
+      this.channel.push("update_pos", {}); 
+      this.gotView(game);
+    })
+    console.log("RECEIVED UPDATE");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this.checkBoard();
+  }
+
+  checkBoard() {
+    let board = this.state.board;
+    let p1 = board.filter((val) => {
+      return val == 1 || val == 3;
+    });
+    let p2 = board.filter((val) => {
+      return val == 2 || val == 4;
+    });
+    console.log("P1 "+p1.length+" P2 "+p2.length);
+    if (p1.length == 0 && p2.length != 0 && this.state.winner == -1) {
+      alert("Player 2 won")
+      this.restartGame(0);
+    } else if (p2.length == 0 && p1.length != 0 && this.state.winner == -1) {
+      alert("Player 1 won")
+      this.restartGame(0)
+    }
   }
 
   sendClick(id) {
-    this.channel.push("move", { id: id, board: this.state.board, selectedTile: this.state.selectedTile })
-      .receive("ok", this.gotView.bind(this));
-//    setTimeout(() => {
-//      this.channel.push("timeout", { id: id, cards: this.state.cards })
-//        .receive("ok", this.gotView.bind(this))
-//    }, 500)
+    this.channel.push("move", { id: id, selectedTile: this.state.selectedTile })
   }
 
   selectTile(id) {
-    console.log("selected: "+id)
     let selected = this.state.selectedTile;
     let val = this.state.board[id];
-    if (this.isValidSelect(id, val)) {
-      console.log("setting tile "+id+" val "+val+" "+this.state.turn);
+    if (this.isValidSelect(id, val) && !this.state.force) {
       this.setTile(id, val);
     } else if (selected != -1) {
       this.sendClick(id);
     }
-  }  
+  }
 
   isValidSelect(id, val) {
     if (val == 0) {
@@ -58,37 +89,12 @@ class MemoryGame extends React.Component {
     this.setState({selectedTile: id});
   }
 
-  //check if the move is allowed here to reduce
-  //communication to and from server
-  //if move is not allowed we abort it immediately
-  handleClick(id) {
-    let board = this.state.board;
-    let selected = this.state.selectedTile;
-    if (!isValidMove(selected, id)) {
-      console.log("illegal move");
-      return;
-    }
-    
-    let isJump = isJumpMove(selected, id);
-    
+  restartGame(winner) {
+    this.channel.push("reset", {})
+      .receive("ok", view => {
+        this.gotView(view.game)
+      });
   }
-
-  nextTurn() {
-    return (this.state.turn == 1 ? 0 : 1);
-  }
-
-  checkBoard(flag) {
-    let done = this.state.done;
-    if (done >= 16 && flag) {
-      alert("Board cleared! Generating new board!")
-      this.restartGame();
-    }
-  }
-
-  restartGame() {
-    this.channel.push("reset", { cards: this.state.cards })
-      .receive("ok", this.gotView.bind(this));
-  }  
 
   render() {
     return (
@@ -140,6 +146,9 @@ function Piece(params) {
     classes += "player-one";
   } else if (val%2 == 0) {
     classes += "player-two";
+  }
+  if (val > 2) {
+    classes += " king";
   }
   return (
     <div className={classes}></div>

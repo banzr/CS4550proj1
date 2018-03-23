@@ -41269,9 +41269,16 @@ var MemoryGame = function (_React$Component) {
       board: [],
       //whose turn is it: 1 for p1 and 0 for p2
       turn: 1,
-      selectedTile: -1
+      selectedTile: -1,
+      //cannot change selectedTile, for continuous jumping
+      force: false,
+      winner: -1
     };
-    _this.channel.join().receive("ok", _this.gotView.bind(_this)).receive("error", function (resp) {
+    _this.channel.join().receive("ok", function (view) {
+      console.log("joined channel");
+      _this.gotView(view.game);
+      _this.channelHandlers(_this.channel);
+    }).receive("error", function (resp) {
       console.log("MemoryGame Unable to join", resp);
     });
     return _this;
@@ -41279,26 +41286,58 @@ var MemoryGame = function (_React$Component) {
 
   _createClass(MemoryGame, [{
     key: 'gotView',
-    value: function gotView(view) {
-      this.setState(view.game, this.checkBoard(view.game.reset));
+    value: function gotView(game) {
+      this.setState(game, this.checkBoard());
+    }
+  }, {
+    key: 'channelHandlers',
+    value: function channelHandlers(channel) {
+      var _this2 = this;
+
+      channel.on("player:position", function (_ref) {
+        var game = _ref.game;
+
+        console.log("shit son");
+        _this2.channel.push("update_pos", {});
+        _this2.gotView(game);
+      });
+      console.log("RECEIVED UPDATE");
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      this.checkBoard();
+    }
+  }, {
+    key: 'checkBoard',
+    value: function checkBoard() {
+      var board = this.state.board;
+      var p1 = board.filter(function (val) {
+        return val == 1 || val == 3;
+      });
+      var p2 = board.filter(function (val) {
+        return val == 2 || val == 4;
+      });
+      console.log("P1 " + p1.length + " P2 " + p2.length);
+      if (p1.length == 0 && p2.length != 0 && this.state.winner == -1) {
+        alert("Player 2 won");
+        this.restartGame(0);
+      } else if (p2.length == 0 && p1.length != 0 && this.state.winner == -1) {
+        alert("Player 1 won");
+        this.restartGame(0);
+      }
     }
   }, {
     key: 'sendClick',
     value: function sendClick(id) {
-      this.channel.push("move", { id: id, board: this.state.board, selectedTile: this.state.selectedTile }).receive("ok", this.gotView.bind(this));
-      //    setTimeout(() => {
-      //      this.channel.push("timeout", { id: id, cards: this.state.cards })
-      //        .receive("ok", this.gotView.bind(this))
-      //    }, 500)
+      this.channel.push("move", { id: id, selectedTile: this.state.selectedTile });
     }
   }, {
     key: 'selectTile',
     value: function selectTile(id) {
-      console.log("selected: " + id);
       var selected = this.state.selectedTile;
       var val = this.state.board[id];
-      if (this.isValidSelect(id, val)) {
-        console.log("setting tile " + id + " val " + val + " " + this.state.turn);
+      if (this.isValidSelect(id, val) && !this.state.force) {
         this.setTile(id, val);
       } else if (selected != -1) {
         this.sendClick(id);
@@ -41317,41 +41356,14 @@ var MemoryGame = function (_React$Component) {
     value: function setTile(id, val) {
       this.setState({ selectedTile: id });
     }
-
-    //check if the move is allowed here to reduce
-    //communication to and from server
-    //if move is not allowed we abort it immediately
-
-  }, {
-    key: 'handleClick',
-    value: function handleClick(id) {
-      var board = this.state.board;
-      var selected = this.state.selectedTile;
-      if (!isValidMove(selected, id)) {
-        console.log("illegal move");
-        return;
-      }
-
-      var isJump = isJumpMove(selected, id);
-    }
-  }, {
-    key: 'nextTurn',
-    value: function nextTurn() {
-      return this.state.turn == 1 ? 0 : 1;
-    }
-  }, {
-    key: 'checkBoard',
-    value: function checkBoard(flag) {
-      var done = this.state.done;
-      if (done >= 16 && flag) {
-        alert("Board cleared! Generating new board!");
-        this.restartGame();
-      }
-    }
   }, {
     key: 'restartGame',
-    value: function restartGame() {
-      this.channel.push("reset", { cards: this.state.cards }).receive("ok", this.gotView.bind(this));
+    value: function restartGame(winner) {
+      var _this3 = this;
+
+      this.channel.push("reset", {}).receive("ok", function (view) {
+        _this3.gotView(view.game);
+      });
     }
   }, {
     key: 'render',
@@ -41417,6 +41429,9 @@ function Piece(params) {
     classes += "player-one";
   } else if (val % 2 == 0) {
     classes += "player-two";
+  }
+  if (val > 2) {
+    classes += " king";
   }
   return _react2.default.createElement('div', { className: classes });
 }
