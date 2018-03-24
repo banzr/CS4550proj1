@@ -28,7 +28,7 @@ defmodule CheckerWeb do
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/memory_web/templates",
+      use Phoenix.View, root: "lib/checker_web/templates",
                         namespace: CheckerWeb
 
       # Import convenience functions from controllers

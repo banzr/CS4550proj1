@@ -1,5 +1,5 @@
 defmodule CheckerWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :memory
+  use Phoenix.Endpoint, otp_app: :checker
 
   socket "/socket", CheckerWeb.UserSocket
 
@@ -8,7 +8,7 @@ defmodule CheckerWeb.Endpoint do
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :memory, gzip: false,
+    at: "/", from: :checker, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,7 +35,7 @@ defmodule CheckerWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_memory_key",
+    key: "_checker_key",
     signing_salt: "JUnWMkA1"
 
   plug CheckerWeb.Router
