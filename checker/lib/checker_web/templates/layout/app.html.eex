@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <script>
       window.userToken = "TODO" ;
+      window.userName = "Uknown";
     </script>
     <title>Hello Checker!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
