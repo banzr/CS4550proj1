@@ -119,7 +119,7 @@ class CheckerGame extends React.Component {
               <div class="row">
               <div class="col-3">
                   <h6>Current Turn: <span class="badge badge-primary">Player {this.state.turn}</span></h6>
-                  <h6>Game: <span class="badge badge-primary"> {document.getElementById('gameName').value} </span></h6>
+                  <h6>Game: <span class="badge badge-primary"> test </span></h6>
               </div>
               <div class="col-9">
         <Board board={this.state.board} sendClick={this.selectTile.bind(this)} selectedTile={this.state.selectedTile}/>
