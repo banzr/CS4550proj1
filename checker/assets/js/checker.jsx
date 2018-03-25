@@ -26,7 +26,7 @@ class CheckerGame extends React.Component {
         this.gotView(view.game);
         this.channelHandlers(this.channel);
       })
-      .receive("error", resp => { console.log("MemoryGame Unable to join", resp) });
+      .receive("error", resp => { console.log("CheckersGame Unable to join", resp) });
   }
 
   gotView(game) {
@@ -35,7 +35,7 @@ class CheckerGame extends React.Component {
 
   channelHandlers(channel) {
     channel.on("player:position", ({game: game}) => {
-      console.log("shit son");
+      console.log("shoot son");
       this.channel.push("update_pos", {}); 
       this.gotView(game);
     })
@@ -98,14 +98,36 @@ class CheckerGame extends React.Component {
 
   render() {
     return (
+
       <div>
-        <Button className="col" onClick={this.restartGame.bind(this)}>Restart!</Button>
-        <div className="col">
-          &nbsp;
-        </div>
-        <div>Player {this.state.turn}</div>
+      <nav className="navbar navbar-light bg-light justify-content-between navbar-light bg-light text-dark">
+          <a className="navbar-brand">
+              <div className="form-inline">
+              <img src="/images/checkers_icon.png" width="56" height="56" className="d-inline-block align-top" alt=""></img>
+                  &nbsp;
+                  <h1>Checkers</h1></div></a>
+          <form className="form-inline">
+
+              &nbsp;&nbsp;
+              <Button className="col btn btn-danger" onClick={this.restartGame.bind(this)}>
+                  <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;Restart
+              </Button>
+          </form>
+
+      </nav>&nbsp;
+          <div className="jumbotron">
+              <div class="row">
+              <div class="col-3">
+                  <h6>Current Turn: <span class="badge badge-primary">Player {this.state.turn}</span></h6>
+                  <h6>Game: <span class="badge badge-primary"> test </span></h6>
+              </div>
+              <div class="col-9">
         <Board board={this.state.board} sendClick={this.selectTile.bind(this)} selectedTile={this.state.selectedTile}/>
+              </div>
+              </div>
+          </div>
       </div>
+
     );
   }
 }
@@ -126,6 +148,8 @@ function Tile(params) {
   let id = params.id
   let color = (id%2 + Math.floor(id/8)) % 2 == 0 ? "red" : "black";
   let selection = (id == params.selectedTile ? " selected" : "");
+
+  //$('tile').css('height', size / 10).css('width', size / 10);
   let classes = "tile " + color + selection;
   function tileClicked(e) {
     params.sendClick(id);

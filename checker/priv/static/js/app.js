@@ -41279,7 +41279,7 @@ var CheckerGame = function (_React$Component) {
       _this.gotView(view.game);
       _this.channelHandlers(_this.channel);
     }).receive("error", function (resp) {
-      console.log("MemoryGame Unable to join", resp);
+      console.log("CheckersGame Unable to join", resp);
     });
     return _this;
   }
@@ -41297,7 +41297,7 @@ var CheckerGame = function (_React$Component) {
       channel.on("player:position", function (_ref) {
         var game = _ref.game;
 
-        console.log("shit son");
+        console.log("shoot son");
         _this2.channel.push("update_pos", {});
         _this2.gotView(game);
       });
@@ -41372,22 +41372,76 @@ var CheckerGame = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          _reactstrap.Button,
-          { className: 'col', onClick: this.restartGame.bind(this) },
-          'Restart!'
+          'nav',
+          { className: 'navbar navbar-light bg-light justify-content-between navbar-light bg-light text-dark' },
+          _react2.default.createElement(
+            'a',
+            { className: 'navbar-brand' },
+            _react2.default.createElement(
+              'div',
+              { className: 'form-inline' },
+              _react2.default.createElement('img', { src: '/images/checkers_icon.png', width: '56', height: '56', className: 'd-inline-block align-top', alt: '' }),
+              '\xA0',
+              _react2.default.createElement(
+                'h1',
+                null,
+                'Checkers'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'form',
+            { className: 'form-inline' },
+            '\xA0\xA0',
+            _react2.default.createElement(
+              _reactstrap.Button,
+              { className: 'col btn btn-danger', onClick: this.restartGame.bind(this) },
+              _react2.default.createElement('i', { 'class': 'fa fa-refresh', 'aria-hidden': 'true' }),
+              '\xA0Restart'
+            )
+          )
         ),
+        '\xA0',
         _react2.default.createElement(
           'div',
-          { className: 'col' },
-          '\xA0'
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          'Player ',
-          this.state.turn
-        ),
-        _react2.default.createElement(Board, { board: this.state.board, sendClick: this.selectTile.bind(this), selectedTile: this.state.selectedTile })
+          { className: 'jumbotron' },
+          _react2.default.createElement(
+            'div',
+            { 'class': 'row' },
+            _react2.default.createElement(
+              'div',
+              { 'class': 'col-3' },
+              _react2.default.createElement(
+                'h6',
+                null,
+                'Current Turn: ',
+                _react2.default.createElement(
+                  'span',
+                  { 'class': 'badge badge-primary' },
+                  'Player ',
+                  this.state.turn
+                )
+              ),
+              _react2.default.createElement(
+                'h6',
+                null,
+                'Game: ',
+                _react2.default.createElement(
+                  'span',
+                  { 'class': 'badge badge-primary' },
+                  ' ',
+                  document.getElementById('gameName').value,
+                  ' '
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'col-9' },
+              _react2.default.createElement(Board, { board: this.state.board, sendClick: this.selectTile.bind(this), selectedTile: this.state.selectedTile })
+            )
+          )
+        )
       );
     }
   }]);
@@ -41411,6 +41465,8 @@ function Tile(params) {
   var id = params.id;
   var color = (id % 2 + Math.floor(id / 8)) % 2 == 0 ? "red" : "black";
   var selection = id == params.selectedTile ? " selected" : "";
+
+  //$('tile').css('height', size / 10).css('width', size / 10);
   var classes = "tile " + color + selection;
   function tileClicked(e) {
     params.sendClick(id);
