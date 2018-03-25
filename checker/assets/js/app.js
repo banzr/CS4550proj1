@@ -23,17 +23,18 @@ import socket from "./socket"
 import game_init from "./checker";
 
 function form_init() {
-  let channel = socket.channel("games:demo", {});
+  let channel = socket.channel("games:demo", {user_id: "Unknown form_init"});
   channel.join()
          .receive("ok", resp => { console.log("Joined successfully", resp) })
          .receive("error", resp => { console.log("app.init Unable to join", resp) });
 }
 
 function start() {
-  let root = document.getElementById('root');
+  let root = document.getElementById('root');  
   if (root) {
-    let channel = socket.channel("games:" + window.gameName, {});
-    game_init(root, channel);
+    console.log(window.user_id)
+    let channel = socket.channel("games:" + window.gameName, {user_id: window.user_id});
+    game_init(root, channel, window.user_id);
   }
 
   if (document.getElementById('index-page')) {

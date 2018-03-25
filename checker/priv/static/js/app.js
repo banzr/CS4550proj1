@@ -41185,7 +41185,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // paths "./socket" or full ones "web/static/js/socket".
 
 function form_init() {
-  var channel = _socket2.default.channel("games:demo", {});
+  var channel = _socket2.default.channel("games:demo", { user_id: "Unknown form_init" });
   channel.join().receive("ok", function (resp) {
     console.log("Joined successfully", resp);
   }).receive("error", function (resp) {
@@ -41209,8 +41209,9 @@ function form_init() {
 function start() {
   var root = document.getElementById('root');
   if (root) {
-    var channel = _socket2.default.channel("games:" + window.gameName, {});
-    (0, _checker2.default)(root, channel);
+    console.log(window.user_id);
+    var channel = _socket2.default.channel("games:" + window.gameName, { user_id: window.user_id });
+    (0, _checker2.default)(root, channel, window.user_id);
   }
 
   if (document.getElementById('index-page')) {
@@ -41251,8 +41252,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function game_init(root, channel) {
-  _reactDom2.default.render(_react2.default.createElement(CheckerGame, { channel: channel }), root);
+function game_init(root, channel, player) {
+  _reactDom2.default.render(_react2.default.createElement(CheckerGame, { channel: channel, player: player }), root);
 }
 
 var CheckerGame = function (_React$Component) {
@@ -41272,14 +41273,17 @@ var CheckerGame = function (_React$Component) {
       selectedTile: -1,
       //cannot change selectedTile, for continuous jumping
       force: false,
-      winner: -1
+      winner: -1,
+      players: [],
+      viewers: []
     };
+    _this.player = props.player;
     _this.channel.join().receive("ok", function (view) {
       console.log("joined channel");
       _this.gotView(view.game);
       _this.channelHandlers(_this.channel);
     }).receive("error", function (resp) {
-      console.log("MemoryGame Unable to join", resp);
+      console.log("CheckerGame Unable to join", resp);
     });
     return _this;
   }
@@ -41297,8 +41301,19 @@ var CheckerGame = function (_React$Component) {
       channel.on("player:position", function (_ref) {
         var game = _ref.game;
 
-        console.log("shit son");
         _this2.channel.push("update_pos", {});
+        _this2.gotView(game);
+      });
+      channel.on("player:joined", function (_ref2) {
+        var game = _ref2.game;
+
+        _.map(game.players, function (p, ii) {
+          console.log("PLAYER " + ii + " " + p);
+        });
+        console.log("SUP?");
+        _.map(game.viewers, function (v, ii) {
+          console.log("VIEWER " + ii + " " + v);
+        });
         _this2.gotView(game);
       });
       console.log("RECEIVED UPDATE");
@@ -41337,10 +41352,14 @@ var CheckerGame = function (_React$Component) {
     value: function selectTile(id) {
       var selected = this.state.selectedTile;
       var val = this.state.board[id];
-      if (this.isValidSelect(id, val) && !this.state.force) {
-        this.setTile(id, val);
-      } else if (selected != -1) {
-        this.sendClick(id);
+      console.log("THIS PLAYER " + this.player + " " + this.state.turn % 2);
+      console.log("THIS TURN PLAYER " + this.state.players[0]);
+      if (this.player == this.state.players[this.state.turn % 2]) {
+        if (this.isValidSelect(id, val) && !this.state.force) {
+          this.setTile(id, val);
+        } else if (selected != -1) {
+          this.sendClick(id);
+        }
       }
     }
   }, {
@@ -41463,7 +41482,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _phoenix = require("phoenix");
 
-var socket = new _phoenix.Socket("/socket", { params: { token: window.userToken } });
+var socket = new _phoenix.Socket("/socket", { params: { token: window.userToken, user_id: window.user_id } });
 
 // When you connect, you'll often need to authenticate the client.
 // For example, imagine you have an authentication plug, `MyAuth`,

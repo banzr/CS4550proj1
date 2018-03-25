@@ -13,11 +13,14 @@ defmodule CheckerWeb.Game do
       turn: 1,
       selectedTile: -1,
       force: false,
-      winner: -1
+      winner: -1,
+      players: %{},
+      viewers: %{}
     }
   end
 
-  def client_view(game) do
+  def client_view(game) do 
+    IO.puts("PLAYERS #{Kernel.inspect(game.players)}"); 
     game
   end
 

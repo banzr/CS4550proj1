@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from 'reactstrap';
 
-export default function game_init(root, channel) {
-  ReactDOM.render(<CheckerGame channel={channel}/>, root);
+export default function game_init(root, channel, player) {
+  ReactDOM.render(<CheckerGame channel={channel} player={player}/>, root);
 }
 
 class CheckerGame extends React.Component {
@@ -18,15 +18,18 @@ class CheckerGame extends React.Component {
       selectedTile: -1,
       //cannot change selectedTile, for continuous jumping
       force: false,
-      winner: -1
+      winner: -1,
+      players: [],
+      viewers: []
       };
+    this.player = props.player;
     this.channel.join()
       .receive("ok", view => {
         console.log("joined channel");
         this.gotView(view.game);
         this.channelHandlers(this.channel);
       })
-      .receive("error", resp => { console.log("MemoryGame Unable to join", resp) });
+      .receive("error", resp => { console.log("CheckerGame Unable to join", resp) });
   }
 
   gotView(game) {
@@ -35,10 +38,19 @@ class CheckerGame extends React.Component {
 
   channelHandlers(channel) {
     channel.on("player:position", ({game: game}) => {
-      console.log("shit son");
       this.channel.push("update_pos", {}); 
       this.gotView(game);
-    })
+    });
+    channel.on("player:joined", ({game: game}) => {
+      _.map(game.players, (p, ii) => {
+        console.log("PLAYER "+ii+" "+p);
+      });
+      console.log("SUP?");
+      _.map(game.viewers, (v, ii) => {
+        console.log("VIEWER "+ii+" "+v);
+      });
+      this.gotView(game);
+    });
     console.log("RECEIVED UPDATE");
   }
 
@@ -71,10 +83,14 @@ class CheckerGame extends React.Component {
   selectTile(id) {
     let selected = this.state.selectedTile;
     let val = this.state.board[id];
-    if (this.isValidSelect(id, val) && !this.state.force) {
-      this.setTile(id, val);
-    } else if (selected != -1) {
-      this.sendClick(id);
+    console.log("THIS PLAYER "+this.player+" "+this.state.turn%2);
+    console.log("THIS TURN PLAYER "+this.state.players[0]);
+    if (this.player == this.state.players[this.state.turn%2]) {
+      if (this.isValidSelect(id, val) && !this.state.force) {
+        this.setTile(id, val);
+      } else if (selected != -1) {
+        this.sendClick(id);
+      }
     }
   }
 
