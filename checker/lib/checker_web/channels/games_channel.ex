@@ -61,15 +61,12 @@ defmodule CheckerWeb.GamesChannel do
     {:noreply, socket}
   end
 
-  def handle_in("timeout", %{}, socket) do
-    game = Game.handle_timeout(socket.assigns[:game])
-    socket = assign(socket, :game, game)
-    {:reply, {:ok, %{"game" => Game.client_view(game)}}, socket}
-  end
-
   def handle_in("reset", %{}, socket) do
     game = Game.new()
+    Checker.GameBackup.save(socket.assigns[:name], game)
     socket = assign(socket, :game, game)
+    broadcast socket, "player:joined", %{game: Game.client_view(game)}
+
     {:reply, {:ok, %{"game" => Game.client_view(game)}}, socket}
   end
     

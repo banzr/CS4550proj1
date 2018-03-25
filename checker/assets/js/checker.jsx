@@ -50,7 +50,7 @@ class CheckerGame extends React.Component {
         console.log("VIEWER "+ii+" "+v);
       });
       this.gotView(game);
-    });
+    });    
     console.log("RECEIVED UPDATE");
   }
 
@@ -106,10 +106,12 @@ class CheckerGame extends React.Component {
   }
 
   restartGame(winner) {
-    this.channel.push("reset", {})
-      .receive("ok", view => {
-        this.gotView(view.game)
-      });
+    if (this.state.players[0] == this.player || this.state.players[1] == this.player) {
+      this.channel.push("reset", {})
+        .receive("ok", view => {
+          this.gotView(view.game)
+        });
+    }
   }
 
   render() {

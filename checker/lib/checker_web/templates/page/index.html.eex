@@ -18,5 +18,5 @@
       <input type="text" class="form-control" id="userName">
     </div>
     <br>
-    <button type="button"  onClick="'/game/'+(document.getElementById('gameName').value || 'demo')+'/'+(document.getElementById('userName').value || 'unknown');" id="join"class="btn btn-dark btn-lg">Play</button>
+    <button type="button"  onClick="location.href='/game/'+(document.getElementById('gameName').value || 'demo')+'/'+(document.getElementById('userName').value || 'unknown');" id="join"class="btn btn-dark btn-lg">Play</button>
 
