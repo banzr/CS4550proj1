@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col">
-    <h1>Checker Game: <%= @game %></h1>
+
     <script>
       window.gameName = "<%= @game %>";
       window.user_id = "<%= @user_id %>";      

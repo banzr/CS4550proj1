@@ -1,15 +1,22 @@
-<h1>Checker Game</h1>
+<br>
+<h1>Checkers</h1>
 
-<div class="row">
+<br>
+<img class="logo-icon" src="/images/checkers_icon.png">
+<br><br>
+<div class="row text-center">
   <div class="col">
-    <h1 id="index-page">Join a Game</h1>
-    Game Name:<br>
-    <input type="text" id="gameName">
+    <h3 id="index-page">Join a Game</h3>
+    <div class="chkr-centered input-group col-4">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">Game name:</span>
+      </div>
+      <input type="text" class="form-control" id="gameName">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">User name:</span>
+      </div>
+      <input type="text" class="form-control" id="userName">
+    </div>
     <br>
-    Username:<br>
-    <input type="text" id="userName">
-    <br>
-    <button onClick="location.href = '/game/'+(document.getElementById('gameName').value || 'demo')+'/'+(document.getElementById('userName').value || 'unknown');" id="join">Join</button>
-    <p><a href="/game/demo">Demo</a></p>
-  </div>
-</div>
+    <button type="button"  onClick="'/game/'+(document.getElementById('gameName').value || 'demo')+'/'+(document.getElementById('userName').value || 'unknown');" id="join"class="btn btn-dark btn-lg">Play</button>
+

@@ -15,7 +15,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="checkers_icon.svg">
+   sodipodi:docname="checkers_icon.svg"
+   inkscape:export-filename="/home/ghark/git/CS4550proj1/checkers_icon.svg.png"
+   inkscape:export-xdpi="108.169"
+   inkscape:export-ydpi="108.169">
   <defs
      id="defs2">
     <filter
@@ -100,8 +103,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.1646365"
-     inkscape:cx="400"
+     inkscape:zoom="1"
+     inkscape:cx="313.61136"
      inkscape:cy="257.51316"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"

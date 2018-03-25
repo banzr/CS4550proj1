@@ -10,7 +10,7 @@
       window.userToken = "TODO" ;
       window.userName = "Uknown";
     </script>
-    <title>Hello Checker!</title>
+    <title>Play Checkers!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
