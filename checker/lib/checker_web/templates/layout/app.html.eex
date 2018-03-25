@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
-  <body>
-    <div class="container">
+  <body style="background-image: url('/images/mountain.jpg'); background-repeat: no-repeat;
+                                                                  background-size: 200%;">
+    <!--<div class="container">-->
       <%= if get_flash(@conn, :info) || get_flash(@conn, :error) do %>
       <div class="row">
         <div class="col-12">
@@ -32,7 +33,7 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
-    </div> <!-- /container -->
+    <!--</div>--> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

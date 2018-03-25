@@ -1,6 +1,6 @@
 /* This file is for your main application css. */
 
-@import "app.css";
+
 @import "bootstrap.css";
 @import "font-awesome.css";
 
@@ -76,7 +76,7 @@ h1 { text-align: center; }
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
+    background-color: #1d2124 !important;
   }
 
   [tabindex="-1"]:focus {
@@ -9025,6 +9025,9 @@ h1 { text-align: center; }
     width: 6vw;
     height: 6vw;
     margin: 2vw;
+    position: relative;
+    right: 1vh;
+    up: 4vh;
   }
 
 
@@ -9056,8 +9059,15 @@ h1 { text-align: center; }
     width: 6vh;
     height: 6vh;
     margin: 2vh;
+    position: relative;
+    right: 1vh;
+    up: 4vh;
   }
 
+}
+
+.board {
+  opacity: 1.0;
 }
 
 
@@ -9100,20 +9110,18 @@ h1 { text-align: center; }
 .king::before {
   content: '';
   display: block;
-  width: 35px;
-  height: 25px;
   background-image: url('/images/crown.png');
   background-size: 100% 100%;
-  background-position: 0px 2px;
+
   background-repeat: no-repeat;
 }
 
 .player-one {
-  background-color: yellow;
+  background-color: #b83232;
 }
 
 .player-two {
-  background-color: lightgreen;
+  background-color: #423932;
 }
 
 .selected {
@@ -9121,11 +9129,21 @@ h1 { text-align: center; }
 }
 
 .red {
-  background-color: red;
+  background-color:#483737;
 }
 
 .black {
-  background-color: black;
+  background-color: #e9ddaf;
 }
 
+.chkr-nav {
+  background-color: #e9ecef;
+}
+
+.playmat {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 5vh;
+  opacity: 0.9;
+}
 

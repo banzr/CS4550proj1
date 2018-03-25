@@ -41373,7 +41373,7 @@ var CheckerGame = function (_React$Component) {
         null,
         _react2.default.createElement(
           'nav',
-          { className: 'navbar navbar-light bg-light justify-content-between navbar-light bg-light text-dark' },
+          { className: 'navbar navbar-light justify-content-between navbar-light text-dark chkr-nav' },
           _react2.default.createElement(
             'a',
             { className: 'navbar-brand' },
@@ -41396,7 +41396,7 @@ var CheckerGame = function (_React$Component) {
             _react2.default.createElement(
               _reactstrap.Button,
               { className: 'col btn btn-danger', onClick: this.restartGame.bind(this) },
-              _react2.default.createElement('i', { 'class': 'fa fa-refresh', 'aria-hidden': 'true' }),
+              _react2.default.createElement('i', { className: 'fa fa-refresh', 'aria-hidden': 'true' }),
               '\xA0Restart'
             )
           )
@@ -41404,20 +41404,20 @@ var CheckerGame = function (_React$Component) {
         '\xA0',
         _react2.default.createElement(
           'div',
-          { className: 'jumbotron' },
+          { className: 'jumbotron playmat' },
           _react2.default.createElement(
             'div',
-            { 'class': 'row' },
+            { className: 'row' },
             _react2.default.createElement(
               'div',
-              { 'class': 'col-3' },
+              { className: 'col-1' },
               _react2.default.createElement(
                 'h6',
                 null,
                 'Current Turn: ',
                 _react2.default.createElement(
                   'span',
-                  { 'class': 'badge badge-primary' },
+                  { className: 'badge badge-primary' },
                   'Player ',
                   this.state.turn
                 )
@@ -41425,19 +41425,19 @@ var CheckerGame = function (_React$Component) {
               _react2.default.createElement(
                 'h6',
                 null,
-                'Game: ',
+                'Game:',
                 _react2.default.createElement(
                   'span',
-                  { 'class': 'badge badge-primary' },
+                  { className: 'badge badge-primary' },
                   ' ',
-                  document.getElementById('gameName').value,
+                  gameName,
                   ' '
                 )
               )
             ),
             _react2.default.createElement(
               'div',
-              { 'class': 'col-9' },
+              { className: 'col-9' },
               _react2.default.createElement(Board, { board: this.state.board, sendClick: this.selectTile.bind(this), selectedTile: this.state.selectedTile })
             )
           )

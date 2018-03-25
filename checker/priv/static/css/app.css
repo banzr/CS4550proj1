@@ -1,5 +1,4 @@
 /* This file is for your main application css. */
-@import url(app.css);
 @import url(bootstrap.css);
 @import url(font-awesome.css);
 h1 {
@@ -69,7 +68,7 @@ h1 {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff; }
+    background-color: #1d2124 !important; }
   .score [tabindex="-1"]:focus {
     outline: 0 !important; }
   .score hr {
@@ -6236,7 +6235,10 @@ h1 {
   .king::before {
     width: 6vw;
     height: 6vw;
-    margin: 2vw; } }
+    margin: 2vw;
+    position: relative;
+    right: 1vh;
+    up: 4vh; } }
 
 @media screen and (orientation: landscape) {
   .board {
@@ -6256,7 +6258,13 @@ h1 {
   .king::before {
     width: 6vh;
     height: 6vh;
-    margin: 2vh; } }
+    margin: 2vh;
+    position: relative;
+    right: 1vh;
+    up: 4vh; } }
+
+.board {
+  opacity: 1.0; }
 
 .player-one, .player-two {
   border-radius: 50%;
@@ -6292,27 +6300,33 @@ h1 {
 .king::before {
   content: '';
   display: block;
-  width: 35px;
-  height: 25px;
   background-image: url("/images/crown.png");
   background-size: 100% 100%;
-  background-position: 0px 2px;
   background-repeat: no-repeat; }
 
 .player-one {
-  background-color: yellow; }
+  background-color: #b83232; }
 
 .player-two {
-  background-color: lightgreen; }
+  background-color: #423932; }
 
 .selected {
   border: 2px solid blue; }
 
 .red {
-  background-color: red; }
+  background-color: #483737; }
 
 .black {
-  background-color: black; }
+  background-color: #e9ddaf; }
+
+.chkr-nav {
+  background-color: #e9ecef; }
+
+.playmat {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 5vh;
+  opacity: 0.9; }
 
 
 /*!

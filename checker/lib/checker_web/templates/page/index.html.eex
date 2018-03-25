@@ -1,19 +1,18 @@
 <br>
-<h1>Checkers</h1>
+<h1 class="text-light display-2">Checkers</h1>
 
-<br>
 <img class="logo-icon" src="/images/checkers_icon.png">
-<br><br>
+<br>
 <div class="row text-center">
   <div class="col">
-    <h3 id="index-page">Join a Game</h3>
+    <h3 id="index-page"></h3>
 
 
 <div class="chkr-centered input-group col-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">Game name:</span>
+    <span class="input-group-text" id="basic-addon3">Join Game</span>
   </div>
-  <input type="text" class="form-control" id="gameName">
+  <input type="text" class="form-control" id="gameName" placeholder="Enter a game name...">
 </div>
 <br>
 <button type="button"  onClick="location.href =
