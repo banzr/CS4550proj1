@@ -3,6 +3,7 @@
 
     <script>
       window.gameName = "<%= @game %>";
+      window.user_id = "<%= @user_id %>";      
     </script>
     <div id="root">
       <p>React app not loaded...</p>

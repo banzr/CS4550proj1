@@ -21,6 +21,7 @@ defmodule CheckerWeb.UserSocket do
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
   def connect(_params, socket) do
+    socket = assign(socket, :user_id, _params["user_id"])
     {:ok, socket}
   end
   # Socket id's are topics that allow you to identify all sockets for a given user:

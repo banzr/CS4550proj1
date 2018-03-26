@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from 'reactstrap';
 
-export default function game_init(root, channel) {
-  ReactDOM.render(<CheckerGame channel={channel}/>, root);
+export default function game_init(root, channel, player) {
+  ReactDOM.render(<CheckerGame channel={channel} player={player}/>, root);
 }
 
 class CheckerGame extends React.Component {
@@ -18,11 +18,13 @@ class CheckerGame extends React.Component {
       selectedTile: -1,
       //cannot change selectedTile, for continuous jumping
       force: false,
-      winner: -1
+      winner: -1,
+      players: [],
+      viewers: []
       };
+    this.player = props.player;
     this.channel.join()
       .receive("ok", view => {
-        console.log("joined channel");
         this.gotView(view.game);
         this.channelHandlers(this.channel);
       })
@@ -35,11 +37,12 @@ class CheckerGame extends React.Component {
 
   channelHandlers(channel) {
     channel.on("player:position", ({game: game}) => {
-      console.log("shoot son");
       this.channel.push("update_pos", {}); 
       this.gotView(game);
-    })
-    console.log("RECEIVED UPDATE");
+    });
+    channel.on("player:joined", ({game: game}) => {
+      this.gotView(game);
+    });    
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -54,13 +57,16 @@ class CheckerGame extends React.Component {
     let p2 = board.filter((val) => {
       return val == 2 || val == 4;
     });
-    console.log("P1 "+p1.length+" P2 "+p2.length);
-    if (p1.length == 0 && p2.length != 0 && this.state.winner == -1) {
+    if (this.state.winner != -1) {
+      alert("Player "+this.state.winner+" won");
+      this.restartGame()
+    }
+    else if (p1.length == 0 && p2.length != 0 && this.state.winner == -1) {
       alert("Player 2 won")
-      this.restartGame(0);
+      this.restartGame();
     } else if (p2.length == 0 && p1.length != 0 && this.state.winner == -1) {
       alert("Player 1 won")
-      this.restartGame(0)
+      this.restartGame()
     }
   }
 
@@ -71,10 +77,12 @@ class CheckerGame extends React.Component {
   selectTile(id) {
     let selected = this.state.selectedTile;
     let val = this.state.board[id];
-    if (this.isValidSelect(id, val) && !this.state.force) {
-      this.setTile(id, val);
-    } else if (selected != -1) {
-      this.sendClick(id);
+    if (this.player == this.state.players[this.state.turn%2]) {
+      if (this.isValidSelect(id, val) && !this.state.force) {
+        this.setTile(id, val);
+      } else if (selected != -1) {
+        this.sendClick(id);
+      }
     }
   }
 
@@ -89,11 +97,13 @@ class CheckerGame extends React.Component {
     this.setState({selectedTile: id});
   }
 
-  restartGame(winner) {
-    this.channel.push("reset", {})
-      .receive("ok", view => {
-        this.gotView(view.game)
-      });
+  restartGame() {
+    if (this.state.players[0] == this.player || this.state.players[1] == this.player) {
+      this.channel.push("reset", {})
+        .receive("ok", view => {
+          this.gotView(view.game)
+        });
+    }
   }
 
   render() {

@@ -5,15 +5,17 @@
 <br>
 <div class="row text-center">
   <div class="col">
-    <h3 id="index-page"></h3>
+    <h3 id="index-page">Join a Game</h3>
+    <div class="chkr-centered input-group col-4">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">Game name:</span>
+      </div>
+      <input type="text" class="form-control" id="gameName">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">User name:</span>
+      </div>
+      <input type="text" class="form-control" id="userName">
+    </div>
+    <br>
+    <button type="button"  onClick="location.href='/game/'+(document.getElementById('gameName').value || 'demo')+'/'+(document.getElementById('userName').value || 'unknown');" id="join"class="btn btn-dark btn-lg">Play</button>
 
-
-<div class="chkr-centered input-group col-4">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">Join Game</span>
-  </div>
-  <input type="text" class="form-control" id="gameName" placeholder="Enter a game name...">
-</div>
-<br>
-<button type="button"  onClick="location.href =
-     '/game/'+(document.getElementById('gameName').value || 'demo');" id="join"class="btn btn-dark btn-lg">Play</button>
