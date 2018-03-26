@@ -1,9 +1,8 @@
 <br>
-<h1>Checkers</h1>
+<h1 class="text-light display-2">Checkers</h1>
 
-<br>
 <img class="logo-icon" src="/images/checkers_icon.png">
-<br><br>
+<br>
 <div class="row text-center">
   <div class="col">
     <h3 id="index-page">Join a Game</h3>

@@ -110,7 +110,7 @@ class CheckerGame extends React.Component {
     return (
 
       <div>
-      <nav className="navbar navbar-light bg-light justify-content-between navbar-light bg-light text-dark">
+      <nav className="navbar navbar-light justify-content-between navbar-light text-dark chkr-nav">
           <a className="navbar-brand">
               <div className="form-inline">
               <img src="/images/checkers_icon.png" width="56" height="56" className="d-inline-block align-top" alt=""></img>
@@ -120,18 +120,18 @@ class CheckerGame extends React.Component {
 
               &nbsp;&nbsp;
               <Button className="col btn btn-danger" onClick={this.restartGame.bind(this)}>
-                  <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;Restart
+                  <i className="fa fa-refresh" aria-hidden="true"></i>&nbsp;Restart
               </Button>
           </form>
 
       </nav>&nbsp;
-          <div className="jumbotron">
-              <div class="row">
-              <div class="col-3">
-                  <h6>Current Turn: <span class="badge badge-primary">Player {this.state.turn}</span></h6>
-                  <h6>Game: <span class="badge badge-primary"> test </span></h6>
+          <div className="jumbotron playmat">
+              <div className="row">
+              <div className="col-1">
+                  <h6>Current Turn: <span className="badge badge-primary">Player {this.state.turn}</span></h6>
+                  <h6>Game:<span className="badge badge-primary"> {gameName} </span></h6>
               </div>
-              <div class="col-9">
+              <div className="col-9">
         <Board board={this.state.board} sendClick={this.selectTile.bind(this)} selectedTile={this.state.selectedTile}/>
               </div>
               </div>
