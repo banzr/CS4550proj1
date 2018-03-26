@@ -6,6 +6,19 @@ defmodule CheckerWeb.Game do
   Contexts are also responsible for managing your data, regardless
   if it comes from the database, an external API or others.
   """
+  def new(game) do
+    %{
+      board: new_board(),
+#who turn is it, true = 1, false = 0/2
+      turn: 1,
+      selectedTile: -1,
+      force: false,
+      winner: -1,
+      players: game.players,
+      viewers: game.viewers
+    }
+  end
+
   def new() do
     %{
       board: new_board(),
@@ -20,7 +33,6 @@ defmodule CheckerWeb.Game do
   end
 
   def client_view(game) do 
-    IO.puts("PLAYERS #{Kernel.inspect(game.players)}"); 
     game
   end
 
@@ -39,7 +51,6 @@ defmodule CheckerWeb.Game do
     cond do
 #check if king, kings are treated differently
       new_val == 0 && cur_val > 2 ->
-        IO.puts("KING YO")
         if (Kernel.abs(new_row - cur_row) == 1 && Kernel.abs(new_col - cur_col) == 1) do
           %{ result | res: true }
         else
@@ -47,7 +58,6 @@ defmodule CheckerWeb.Game do
             mid_col = div (cur_col + new_col),2
             mid_row = div (cur_row + new_row),2
             mid_id = mid_col + mid_row * 8
-            IO.puts("MID ID K #{mid_id}")
             if ((rem Enum.at(board, mid_id), 2) != (rem cur_val, 2)) do
               %{ result | res: true, mid_id: mid_id}
             end
@@ -56,7 +66,6 @@ defmodule CheckerWeb.Game do
         
 #normal piece
       new_val == 0 ->
-        IO.puts("#{cur_col} #{new_col}")
 #allow move to the next row only
         if (new_row == (cur_row + next_tile)) do
 #allow move diagonally only
@@ -67,7 +76,6 @@ defmodule CheckerWeb.Game do
         else
           if (new_row == (cur_row + 2 * next_tile)) do
             if (new_col == cur_col + 2 * next_tile) do 
-              IO.puts("jump")
               mid_id = (cur_col + next_tile) + (cur_row + next_tile) * 8
               mid_val = Enum.at(board, mid_id)              
               valid = mid_val != 0 && (rem mid_val,2) != (rem cur_val,2)
@@ -78,7 +86,6 @@ defmodule CheckerWeb.Game do
               end
             else
               if (new_col == cur_col - 2 * next_tile) do
-                IO.puts("jump -1")
                 mid_id = (cur_col - next_tile) + (cur_row + next_tile) * 8
                 mid_val = Enum.at(board, mid_id)
                 valid = mid_val != 0 && (rem mid_val,2) != (rem cur_val,2)
@@ -97,6 +104,47 @@ defmodule CheckerWeb.Game do
     end      
   end
 
+  def anyValidMove(board, selected) do
+    result = false
+    cur_val = Enum.at(board, selected)
+    next_tile = 1
+    if ((rem cur_val,2) == 0) do
+      next_tile = -1
+    end
+    cur_col = rem selected, 8
+    cur_row = div selected, 8
+    up_row = cur_row + next_tile
+    left_col = cur_col + next_tile
+    right_col = cur_col - next_tile
+    d_up_row = cur_row + 2 * next_tile
+    up_left_id = left_col + up_row * 8
+    up_right_id = right_col + up_row * 8
+    down_row = cur_row - next_tile
+    down_left_id = left_col + down_row * 8
+    down_right_id = right_col + down_row * 8
+    if (-1 < up_row && up_row < 8) do
+      if (left_col < 8 && left_col > -1) do
+        result = result || Enum.at(board, up_left_id) == 0
+      else
+        if (right_col < 8 && right_col > -1) do
+          result = result || Enum.at(board, up_right_id) == 0
+        end
+      end
+#king case
+    else
+      if (-1 < down_row && down_row < 8) do
+        if (left_col < 8 && left_col > -1) do
+          result = result || Enum.at(board, down_left_id) == 0
+        else
+          if (right_col < 8 && right_col > -1) do
+            result = result || Enum.at(board, down_right_id) == 0
+          end
+        end
+      end
+    end
+    result
+  end
+
   def anyValidJump(board, selected) do
     result = false
     cur_val = Enum.at(board, selected)
@@ -104,7 +152,6 @@ defmodule CheckerWeb.Game do
     if ((rem cur_val,2) == 0) do
       next_tile = -1
     end
-    IO.puts("TILE #{next_tile}")
     cur_col = rem selected, 8
     cur_row = div selected, 8
     up_row = cur_row + next_tile
@@ -158,18 +205,37 @@ defmodule CheckerWeb.Game do
 
   def handle_click(game, id, selected) do 
     board = game.board
+    map_board = Stream.zip(Stream.iterate(0, &(&1+1)), board) |> Enum.into(%{})
+    cur_pieces = :maps.filter(fn k,v -> v > 0 && (rem v, 2) == (rem game.turn, 2) end, map_board)
+    valid_moves = :maps.filter(fn k, v -> anyValidMove(board, k) end, cur_pieces)
+    valid_jumps = :maps.filter(fn k,v -> anyValidJump(board, k) end, cur_pieces)
+  
+    cur_val = Enum.at(board, selected)
+    if (Kernel.length(Map.keys(valid_jumps)) == 0 && Kernel.length(Map.keys(valid_moves)) == 0) do
+      new_turn = (rem game.turn, 2) + 1
+      %{ game | winner: new_turn }
+    else 
+      if (Kernel.length(Map.keys(valid_jumps)) > 0) do
+        if (Map.has_key?(valid_jumps, selected)) do
+          process_move(game, id, selected)
+        else
+          game
+        end
+      else
+        process_move(game, id, selected)
+      end
+    end
+  end
+
+  def process_move(game, id, selected) do
+    board = game.board
     cur_val = Enum.at(board, selected)
     result = isMoveValid(board, selected, id)
     if (!result[:res]) do
-      IO.puts("Illegal move")
       game
     else 
-      IO.puts("Yay")
       new_board = update_board(board, id, selected, result[:mid_id], cur_val)
       valid_jump = anyValidJump(new_board, id)
-      IO.puts("VALID JUMP #{valid_jump}")
-      IO.puts("MID ID #{result[:mid_id]}")
-      IO.puts("GAME FORCE #{game.force}")
       if (game.force && result[:mid_id] == -1) do
         game
       else
@@ -198,13 +264,13 @@ defmodule CheckerWeb.Game do
 
   def new_board() do
     board = [
-      0, 1, 0, 1, 0, 1, 0, 1,
-      1, 0, 1, 0, 1, 0, 1, 0,
-      0, 1, 0, 1, 0, 1, 0, 1,
       0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0,
+      0, 1, 0, 1, 0, 1, 0, 1,
+      0, 0, 0, 0, 0, 0, 0, 0,
+      0, 2, 0, 2, 0, 2, 0, 0,
       2, 0, 2, 0, 2, 0, 2, 0,
-      0, 2, 0, 2, 0, 2, 0, 2,
+      0, 2, 0, 2, 0, 2, 0, 0,
       2, 0, 2, 0, 2, 0, 2, 0 
     ]
     board

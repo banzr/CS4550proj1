@@ -25,7 +25,6 @@ class CheckerGame extends React.Component {
     this.player = props.player;
     this.channel.join()
       .receive("ok", view => {
-        console.log("joined channel");
         this.gotView(view.game);
         this.channelHandlers(this.channel);
       })
@@ -42,16 +41,8 @@ class CheckerGame extends React.Component {
       this.gotView(game);
     });
     channel.on("player:joined", ({game: game}) => {
-      _.map(game.players, (p, ii) => {
-        console.log("PLAYER "+ii+" "+p);
-      });
-      console.log("SUP?");
-      _.map(game.viewers, (v, ii) => {
-        console.log("VIEWER "+ii+" "+v);
-      });
       this.gotView(game);
     });    
-    console.log("RECEIVED UPDATE");
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -66,13 +57,16 @@ class CheckerGame extends React.Component {
     let p2 = board.filter((val) => {
       return val == 2 || val == 4;
     });
-    console.log("P1 "+p1.length+" P2 "+p2.length);
-    if (p1.length == 0 && p2.length != 0 && this.state.winner == -1) {
+    if (this.state.winner != -1) {
+      alert("Player "+this.state.winner+" won");
+      this.restartGame()
+    }
+    else if (p1.length == 0 && p2.length != 0 && this.state.winner == -1) {
       alert("Player 2 won")
-      this.restartGame(0);
+      this.restartGame();
     } else if (p2.length == 0 && p1.length != 0 && this.state.winner == -1) {
       alert("Player 1 won")
-      this.restartGame(0)
+      this.restartGame()
     }
   }
 
@@ -83,8 +77,6 @@ class CheckerGame extends React.Component {
   selectTile(id) {
     let selected = this.state.selectedTile;
     let val = this.state.board[id];
-    console.log("THIS PLAYER "+this.player+" "+this.state.turn%2);
-    console.log("THIS TURN PLAYER "+this.state.players[0]);
     if (this.player == this.state.players[this.state.turn%2]) {
       if (this.isValidSelect(id, val) && !this.state.force) {
         this.setTile(id, val);
@@ -105,7 +97,7 @@ class CheckerGame extends React.Component {
     this.setState({selectedTile: id});
   }
 
-  restartGame(winner) {
+  restartGame() {
     if (this.state.players[0] == this.player || this.state.players[1] == this.player) {
       this.channel.push("reset", {})
         .receive("ok", view => {

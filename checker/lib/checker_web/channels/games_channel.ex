@@ -7,8 +7,6 @@ defmodule CheckerWeb.GamesChannel do
     if authorized?(payload) do
       game = Checker.GameBackup.load(name) || Game.new()
       game = add_user(game, socket)
-      IO.puts("PLAYERS #{Kernel.inspect(game.players)}")
-      IO.puts("VIEWERS #{Kernel.inspect(game.viewers)}")
 
       socket = socket
       |> assign(:game, game)
@@ -37,11 +35,9 @@ defmodule CheckerWeb.GamesChannel do
   end
 
   def handle_info({:after_join, _name}, socket) do
-    IO.puts("JNAME #{_name}")
     game = Checker.GameBackup.load(_name) || Game.new()    
     socket = socket
       |> assign(:game, game)
-    IO.puts("JGAME #{Kernel.inspect(game)}")
     broadcast socket, "player:joined", %{game: Game.client_view(game)}   
 
     {:noreply, socket}
@@ -62,7 +58,9 @@ defmodule CheckerWeb.GamesChannel do
   end
 
   def handle_in("reset", %{}, socket) do
-    game = Game.new()
+    game = Checker.GameBackup.load(socket.assigns[:name])
+    game = Game.new(game)
+
     Checker.GameBackup.save(socket.assigns[:name], game)
     socket = assign(socket, :game, game)
     broadcast socket, "player:joined", %{game: Game.client_view(game)}

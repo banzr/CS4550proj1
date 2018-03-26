@@ -41725,7 +41725,6 @@ var CheckerGame = function (_React$Component) {
     };
     _this.player = props.player;
     _this.channel.join().receive("ok", function (view) {
-      console.log("joined channel");
       _this.gotView(view.game);
       _this.channelHandlers(_this.channel);
     }).receive("error", function (resp) {
@@ -41753,16 +41752,8 @@ var CheckerGame = function (_React$Component) {
       channel.on("player:joined", function (_ref2) {
         var game = _ref2.game;
 
-        _.map(game.players, function (p, ii) {
-          console.log("PLAYER " + ii + " " + p);
-        });
-        console.log("SUP?");
-        _.map(game.viewers, function (v, ii) {
-          console.log("VIEWER " + ii + " " + v);
-        });
         _this2.gotView(game);
       });
-      console.log("RECEIVED UPDATE");
     }
   }, {
     key: 'componentDidUpdate',
@@ -41779,13 +41770,15 @@ var CheckerGame = function (_React$Component) {
       var p2 = board.filter(function (val) {
         return val == 2 || val == 4;
       });
-      console.log("P1 " + p1.length + " P2 " + p2.length);
-      if (p1.length == 0 && p2.length != 0 && this.state.winner == -1) {
+      if (this.state.winner != -1) {
+        alert("Player " + this.state.winner + " won");
+        this.restartGame();
+      } else if (p1.length == 0 && p2.length != 0 && this.state.winner == -1) {
         alert("Player 2 won");
-        this.restartGame(0);
+        this.restartGame();
       } else if (p2.length == 0 && p1.length != 0 && this.state.winner == -1) {
         alert("Player 1 won");
-        this.restartGame(0);
+        this.restartGame();
       }
     }
   }, {
@@ -41798,8 +41791,6 @@ var CheckerGame = function (_React$Component) {
     value: function selectTile(id) {
       var selected = this.state.selectedTile;
       var val = this.state.board[id];
-      console.log("THIS PLAYER " + this.player + " " + this.state.turn % 2);
-      console.log("THIS TURN PLAYER " + this.state.players[0]);
       if (this.player == this.state.players[this.state.turn % 2]) {
         if (this.isValidSelect(id, val) && !this.state.force) {
           this.setTile(id, val);
@@ -41823,7 +41814,7 @@ var CheckerGame = function (_React$Component) {
     }
   }, {
     key: 'restartGame',
-    value: function restartGame(winner) {
+    value: function restartGame() {
       var _this3 = this;
 
       if (this.state.players[0] == this.player || this.state.players[1] == this.player) {
