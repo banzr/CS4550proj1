@@ -3,6 +3,7 @@ defmodule CheckerWeb.GamesChannel do
   
   alias CheckerWeb.Game
 
+
   def join("games:" <> name, payload, socket) do
     if authorized?(payload) do
       game = Checker.GameBackup.load(name) || Game.new()
@@ -14,6 +15,7 @@ defmodule CheckerWeb.GamesChannel do
       Checker.GameBackup.save(socket.assigns[:name], game)      
 
       send(self, {:after_join, name})
+
 
       {:ok, %{"join" => name, "game" => Game.client_view(game)}, socket}
     else
