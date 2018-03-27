@@ -31,7 +31,7 @@ function form_init() {
 
   channel.join()
          .receive("ok", resp => {
-             console.log("Joined successfully", resp);
+             console.log("Joined successfully", resp.game_list);
 
     let gl = resp.game_list.slice(0);
 
@@ -54,7 +54,6 @@ function form_init() {
 
     })
 
-             document.getElementById('game1').appendChild(txt1);
          })
          .receive("error", resp => { console.log("app.init Unable to join", resp) });
 

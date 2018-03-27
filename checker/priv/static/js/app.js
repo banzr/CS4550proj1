@@ -41634,7 +41634,7 @@ function form_init() {
   var channel = _socket2.default.channel("games:164579235", { user_id: "Unknown form_init" });
 
   channel.join().receive("ok", function (resp) {
-    console.log("Joined successfully", resp);
+    console.log("Joined successfully", resp.game_list);
 
     var gl = resp.game_list.slice(0);
 
@@ -41656,8 +41656,6 @@ function form_init() {
 
       document.getElementById('game_list').appendChild(a_elem);
     });
-
-    document.getElementById('game1').appendChild(txt1);
   }).receive("error", function (resp) {
     console.log("app.init Unable to join", resp);
   });
@@ -41776,13 +41774,6 @@ var CheckerGame = function (_React$Component) {
       channel.on("player:joined", function (_ref2) {
         var game = _ref2.game;
 
-        _.map(game.players, function (p, ii) {
-          console.log("PLAYER " + ii + " " + p);
-        });
-        console.log("SUP?");
-        _.map(game.viewers, function (v, ii) {
-          console.log("VIEWER " + ii + " " + v);
-        });
         _this2.gotView(game);
       });
     }
@@ -41972,8 +41963,6 @@ function ViewerList(params) {
   });
 
   var views = Array.from(vs_set);
-  console.log("List of viewers", vs);
-  console.log("set of viewers", vs_set);
   if (!vs.length) {
     views = ["No viewers"];
   };

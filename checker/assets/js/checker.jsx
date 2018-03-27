@@ -41,13 +41,6 @@ class CheckerGame extends React.Component {
       this.gotView(game);
     });
     channel.on("player:joined", ({game: game}) => {
-      _.map(game.players, (p, ii) => {
-        console.log("PLAYER "+ii+" "+p);
-      });
-      console.log("SUP?");
-      _.map(game.viewers, (v, ii) => {
-        console.log("VIEWER "+ii+" "+v);
-      });
       this.gotView(game);
     });    
   }
@@ -176,8 +169,6 @@ function ViewerList(params) {
     });
 
     let views = Array.from(vs_set);
-    console.log("List of viewers",vs);
-    console.log("set of viewers",vs_set);
     if (!vs.length) { views = ["No viewers"] };
 
     let listItems = _.map(views, (val, ii) => {
