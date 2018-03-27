@@ -22,11 +22,42 @@ import socket from "./socket"
 
 import game_init from "./checker";
 
+
+
+
+
 function form_init() {
   let channel = socket.channel("games:164579235", {user_id: "Unknown form_init"});
+
   channel.join()
-         .receive("ok", resp => { console.log("Joined successfully", resp) })
+         .receive("ok", resp => {
+             console.log("Joined successfully", resp);
+
+    let gl = resp.game_list.slice(0);
+
+    if (!gl.length) { gl = new Array("No available games...") }
+
+    (gl).forEach(function (game) {
+
+        let list_elem = document.createElement("li");
+        let a_elem = document.createElement("a");
+        list_elem.setAttribute("class", "list-group-item");
+        list_elem.appendChild(document.createTextNode(game.toString()));
+
+        a_elem.setAttribute("href", "#");
+        a_elem.setAttribute("onclick", "setGame(\"" + game.toString() + "\")");
+
+        a_elem.appendChild(list_elem);
+
+        document.getElementById('game_list').appendChild(a_elem);
+
+
+    })
+
+             document.getElementById('game1').appendChild(txt1);
+         })
          .receive("error", resp => { console.log("app.init Unable to join", resp) });
+
 }
 
 function start() {
@@ -39,6 +70,7 @@ function start() {
 
   if (document.getElementById('index-page')) {
     form_init();
+
   }
 }
 // Use jQuery to delay until page loaded.

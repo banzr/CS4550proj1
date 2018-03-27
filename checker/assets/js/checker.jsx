@@ -137,18 +137,18 @@ class CheckerGame extends React.Component {
       </nav>&nbsp;
           <div className="jumbotron playmat">
               <div className="row">
-              <div className="col-1">
+              <div className="col-2">
 
                   <h6>Current Turn: <br></br> <h4><span className="badge badge-primary">
                       { <CurrentPlayer state={this.state} /> }</span></h4></h6>
 
                   <h6>Game: <br></br> <h4><span className="badge badge-primary"> {gameName} </span></h4></h6>
 
-                  <h6>Viewers: <br></br> </h6>
+                  <h6>Viewers: <br></br></h6>
                       <ViewerList state={this.state} />
 
               </div>
-              <div className="col-9">
+              <div className="col-6">
         <Board board={this.state.board} sendClick={this.selectTile.bind(this)} selectedTile={this.state.selectedTile}/>
               </div>
               </div>
@@ -181,7 +181,7 @@ function ViewerList(params) {
     if (!vs.length) { views = ["No viewers"] };
 
     let listItems = _.map(views, (val, ii) => {
-        return <li className="list-group-item list-group-item-primary active" key={ii}> {val}</li>;
+        return <li className="list-group-item list-group-item-primary active viewer" key={ii}> {val}</li>;
     });
     return (
         <h6><ul className="list-group" id="viewer_list">{listItems}</ul></h6>

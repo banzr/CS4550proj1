@@ -13,7 +13,7 @@ defmodule CheckerWeb.GamesChannel do
       |> assign(:name, name)
       Checker.GameBackup.save(socket.assigns[:name], game)      
 
-      game_list = Checker.GameBackup.game_list()
+      game_list = Map.keys(Checker.GameBackup.game_list())
       send(self, {:after_join, name})
 
       {:ok, %{"join" => name, "game_list" => game_list}, socket}

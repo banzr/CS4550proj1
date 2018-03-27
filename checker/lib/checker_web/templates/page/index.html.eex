@@ -1,13 +1,21 @@
 <br>
-<h1 class="text-light display-2">Checkers</h1>
+<h1 id="index-page" class="text-light display-2">Checkers</h1>
 
 <img class="logo-icon" src="/images/checkers_icon.png">
 <br>
 <div class="row text-center">
   <div class="col">
 
-    <ul id="gamelist" class="list-group chkr-gamelist">
+    <ul id="game_list" class="list-group chkr-gamelist">
       <li class="list-group-item active ">JOIN A GAME</li>
+
+    <script>
+    function setGame(str) {
+        if (str != "No available games...") {
+        document.getElementById('gameName').value = str;
+        }
+    }
+    </script>
 
 
 
@@ -19,24 +27,31 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon3">Game name:</span>
       </div>
-      <input type="text" class="form-control" id="gameName">
+      <input type="text" class="form-control" id="gameName" placeholder="Random if left blank...">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon3">User name:</span>
       </div>
-      <input type="text" class="form-control" id="userName">
+      <input type="text" class="form-control" id="userName" placeholder="eg. Superman...">
     </div>
     <br>
     <script>
 
     function play() {
 
-        if ($('#gameName').val() && $('#userName').val()) {
+        if ($('#userName').val()) {
+
+            if (!$('#gameName').val()) {
+                $('#gameName').val("game_" +  Math.floor((Math.random() * 1000) + 1));
+            }
 
         location.href='/game/'
             +(document.getElementById('gameName').value || 'demo')
             +'/'+(document.getElementById('userName').value || 'unknown');
+
+
+
         } else {
-            alert("Please provide a game and user name.");
+            alert("Please provide a username.");
         }
         }
 

@@ -2,345 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="040bd92f-b549-4a37-a78a-a81549a9a282" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/CS4550proj1.iml" afterPath="$PROJECT_DIR$/.idea/CS4550proj1.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Collectable.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Collectable.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Enumerable.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Enumerable.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.IEx.Info.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.IEx.Info.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Inspect.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Inspect.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.List.Chars.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.List.Chars.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Phoenix.HTML.FormData.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Phoenix.HTML.FormData.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Phoenix.HTML.Safe.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Phoenix.HTML.Safe.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Phoenix.Param.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Phoenix.Param.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Plug.Exception.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Plug.Exception.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Poison.Decoder.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Poison.Decoder.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Poison.Encoder.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.Poison.Encoder.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.String.Chars.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/consolidated/Elixir.String.Chars.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.Checker.Application.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.Checker.Application.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.Checker.GameBackup.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.Checker.GameBackup.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.Checker.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.Checker.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Endpoint.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Endpoint.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.ErrorHelpers.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.ErrorHelpers.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.ErrorView.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.ErrorView.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Game.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Game.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.GamesChannel.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.GamesChannel.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Gettext.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Gettext.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.LayoutView.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.LayoutView.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.PageController.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.PageController.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.PageView.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.PageView.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Router.Helpers.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Router.Helpers.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Router.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.Router.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.UserSocket.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.UserSocket.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/checker/ebin/Elixir.CheckerWeb.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Distillery.Cookies.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Distillery.Cookies.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Distillery.IO.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Distillery.IO.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.App.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.App.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Appup.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Appup.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Archiver.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Archiver.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Assembler.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Assembler.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Config.LoadError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Config.LoadError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Config.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Config.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Environment.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Environment.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Errors.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Errors.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Logger.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Logger.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Overlays.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Overlays.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Plugin.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Plugin.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Profile.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Profile.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Release.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Release.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Utils.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Releases.Utils.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Tasks.Release.Clean.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Tasks.Release.Clean.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Tasks.Release.Init.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Tasks.Release.Init.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Tasks.Release.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/distillery/ebin/Elixir.Mix.Tasks.Release.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backend.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backend.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backends.FSInotify.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backends.FSInotify.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backends.FSMac.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backends.FSMac.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backends.FSPoll.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backends.FSPoll.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backends.FSWindows.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Backends.FSWindows.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Worker.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.Worker.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/file_system/ebin/Elixir.FileSystem.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/.mix/compile.erlang" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/.mix/compile.erlang" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/.mix/compile.yecc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Application.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Application.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Backend.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Backend.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Compiler.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Compiler.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Error.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Error.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Extractor.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Extractor.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.ExtractorAgent.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.ExtractorAgent.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Fuzzy.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Fuzzy.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Interpolation.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Interpolation.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Merger.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Merger.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.MissingBindingsError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.MissingBindingsError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.Parser.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.Parser.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.PluralTranslation.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.PluralTranslation.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.SyntaxError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.SyntaxError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.Tokenizer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.Tokenizer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.Translation.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.Translation.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.Translations.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.Translations.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.PO.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Plural.UnknownLocaleError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Plural.UnknownLocaleError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Plural.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.Plural.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Gettext.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Mix.Tasks.Compile.Gettext.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Mix.Tasks.Compile.Gettext.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Mix.Tasks.Gettext.Extract.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Mix.Tasks.Gettext.Extract.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Mix.Tasks.Gettext.Merge.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/Elixir.Mix.Tasks.Gettext.Merge.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/gettext_po_parser.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/gettext/ebin/gettext_po_parser.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/mime/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/mime/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/mime/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/mime/ebin/Elixir.MIME.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/mime/ebin/Elixir.MIME.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Phoenix.Context.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Phoenix.Context.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Phoenix.Schema.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Phoenix.Schema.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Phoenix.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Phoenix.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Compile.Phoenix.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Compile.Phoenix.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Digest.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Digest.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Channel.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Channel.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Html.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Html.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Json.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Json.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Model.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Model.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Presence.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Presence.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Secret.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Secret.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Routes.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Routes.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Server.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Server.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Digest.Clean.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Digest.Clean.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Digest.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Digest.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Channel.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Channel.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Context.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Context.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Embedded.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Embedded.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Html.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Html.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Json.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Json.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Presence.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Presence.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Schema.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Schema.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Secret.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Gen.Secret.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Routes.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Routes.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Server.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Mix.Tasks.Phx.Server.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.ActionClauseError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.ActionClauseError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Channel.Server.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Channel.Server.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Channel.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Channel.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.ChannelTest.NoopSerializer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.ChannelTest.NoopSerializer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.ChannelTest.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.ChannelTest.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.CodeReloader.Proxy.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.CodeReloader.Proxy.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.CodeReloader.Server.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.CodeReloader.Server.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.CodeReloader.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.CodeReloader.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Config.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Config.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.ConnTest.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.ConnTest.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Controller.Pipeline.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Controller.Pipeline.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Controller.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Controller.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Digester.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Digester.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.CowboyHandler.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.CowboyHandler.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.CowboyWebSocket.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.CowboyWebSocket.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.Handler.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.Handler.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.Instrument.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.Instrument.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.RenderErrors.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.RenderErrors.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.Supervisor.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.Supervisor.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.Watcher.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.Watcher.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Endpoint.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Logger.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Logger.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.MissingParamError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.MissingParamError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Naming.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Naming.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.NotAcceptableError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.NotAcceptableError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.Any.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.Any.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.Atom.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.Atom.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.BitString.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.BitString.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.Integer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.Integer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.Map.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.Map.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Param.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Presence.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Presence.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.ConsoleFormatter.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.ConsoleFormatter.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.Helpers.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.Helpers.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.NoRouteError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.NoRouteError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.Resource.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.Resource.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.Route.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.Route.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.Scope.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.Scope.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Router.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.Broadcast.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.Broadcast.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.InvalidMessageError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.InvalidMessageError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.Message.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.Message.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.Reply.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.Reply.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.Transport.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.Transport.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Socket.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.EExEngine.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.EExEngine.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.Engine.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.Engine.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.ExsEngine.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.ExsEngine.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.HTML.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.HTML.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.UndefinedError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.UndefinedError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Template.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Token.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Token.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.LongPoll.Server.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.LongPoll.Server.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.LongPoll.Supervisor.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.LongPoll.Supervisor.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.LongPoll.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.LongPoll.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.LongPollSerializer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.LongPollSerializer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.Serializer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.Serializer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.V2.LongPollSerializer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.V2.LongPollSerializer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.V2.WebSocketSerializer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.V2.WebSocketSerializer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.WebSocket.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.WebSocket.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.WebSocketSerializer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.Transports.WebSocketSerializer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.View.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.View.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix/ebin/Elixir.Phoenix.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Engine.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Engine.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Form.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Form.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.FormData.Plug.Conn.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.FormData.Plug.Conn.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.FormData.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.FormData.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Format.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Format.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Link.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Link.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Atom.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Atom.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.BitString.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.BitString.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Date.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Date.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.DateTime.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.DateTime.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Float.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Float.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Integer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Integer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.List.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.List.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.NaiveDateTime.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.NaiveDateTime.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Time.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Time.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Tuple.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Tuple.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Tag.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Tag.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.Application.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.Application.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.Channel.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.Channel.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.Socket.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.Socket.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.BroadcastError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.BroadcastError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.GC.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.GC.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.Local.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.Local.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.LocalSupervisor.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.LocalSupervisor.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.PG2.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.PG2.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.PG2Server.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.PG2Server.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.Supervisor.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.Supervisor.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.PubSub.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.Clock.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.Clock.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.DeltaGeneration.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.DeltaGeneration.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.Replica.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.Replica.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.State.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.State.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/phoenix_pubsub/ebin/Elixir.Phoenix.Tracker.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/.mix/compile.erlang" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/.mix/compile.erlang" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Collectable.Plug.Conn.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Collectable.Plug.Conn.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Inspect.Plug.Conn.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Inspect.Plug.Conn.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.Conn.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.Conn.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.Handler.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.Handler.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Test.Conn.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Test.Conn.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Translator.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Translator.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.BadRequestError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.BadRequestError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Builder.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Builder.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCSRFTokenError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCSRFTokenError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCrossOriginRequestError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCrossOriginRequestError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.CSRFProtection.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.CSRFProtection.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Adapter.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Adapter.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.AlreadySentError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.AlreadySentError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.CookieOverflowError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.CookieOverflowError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Cookies.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Cookies.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.InvalidHeaderError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.InvalidHeaderError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.InvalidQueryError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.InvalidQueryError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.NotSentError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.NotSentError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Query.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Query.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Status.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Status.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Unfetched.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Unfetched.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Utils.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Utils.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.WrapperError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.WrapperError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Crypto.KeyGenerator.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Crypto.KeyGenerator.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Crypto.MessageEncryptor.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Crypto.MessageEncryptor.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Crypto.MessageVerifier.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Crypto.MessageVerifier.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Crypto.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Crypto.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Debugger.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Debugger.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.ErrorHandler.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.ErrorHandler.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Exception.Any.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Exception.Any.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Exception.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Exception.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.HTML.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.HTML.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Head.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Head.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Logger.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Logger.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.MIME.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.MIME.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.MethodOverride.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.MethodOverride.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.BadEncodingError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.BadEncodingError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.JSON.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.JSON.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.MULTIPART.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.MULTIPART.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.ParseError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.ParseError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.RequestTooLargeError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.RequestTooLargeError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.URLENCODED.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.URLENCODED.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.UnsupportedMediaTypeError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.UnsupportedMediaTypeError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.RequestId.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.RequestId.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.InvalidSpecError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.InvalidSpecError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.Utils.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.Utils.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.SSL.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.SSL.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.COOKIE.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.COOKIE.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.ETS.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.ETS.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.Store.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.Store.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Static.InvalidPathError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Static.InvalidPathError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Static.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Static.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Supervisor.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Supervisor.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Test.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Test.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.TimeoutError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.TimeoutError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Upload.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.Upload.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.UploadError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.UploadError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/Elixir.Plug.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/plug_multipart.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/plug/ebin/plug_multipart.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/.mix/compile.elixir" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/.mix/compile.elixir" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/.mix/compile.elixir_scm" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/.mix/compile.elixir_scm" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/.mix/compile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Decode.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Decode.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Decoder.Any.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Decoder.Any.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Decoder.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Decoder.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encode.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encode.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.EncodeError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.EncodeError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Any.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Any.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Atom.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Atom.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.BitString.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.BitString.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Date.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Date.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.DateTime.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.DateTime.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Float.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Float.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.HashSet.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.HashSet.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Integer.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Integer.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.List.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.List.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Map.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Map.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.MapSet.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.MapSet.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.NaiveDateTime.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.NaiveDateTime.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Range.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Range.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Stream.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Stream.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Time.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.Time.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Encoder.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Parser.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Parser.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Pretty.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.Pretty.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.SyntaxError.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.SyntaxError.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.beam" afterPath="$PROJECT_DIR$/checker/_build/dev/lib/poison/ebin/Elixir.Poison.beam" />
-      <change beforePath="$PROJECT_DIR$/checker/assets/css/app.scss" afterPath="$PROJECT_DIR$/checker/assets/css/app.scss" />
-      <change beforePath="$PROJECT_DIR$/checker/assets/js/checker.jsx" afterPath="$PROJECT_DIR$/checker/assets/js/checker.jsx" />
-      <change beforePath="$PROJECT_DIR$/checker/lib/checker/game.ex" afterPath="$PROJECT_DIR$/checker/lib/checker/game.ex" />
-      <change beforePath="$PROJECT_DIR$/checker/lib/checker_web/channels/games_channel.ex" afterPath="$PROJECT_DIR$/checker/lib/checker_web/channels/games_channel.ex" />
-      <change beforePath="$PROJECT_DIR$/checker/lib/checker_web/templates/page/game.html.eex" afterPath="$PROJECT_DIR$/checker/lib/checker_web/templates/page/game.html.eex" />
-      <change beforePath="$PROJECT_DIR$/checker/lib/checker_web/templates/page/index.html.eex" afterPath="$PROJECT_DIR$/checker/lib/checker_web/templates/page/index.html.eex" />
-      <change beforePath="$PROJECT_DIR$/checker/priv/static/css/app.css" afterPath="$PROJECT_DIR$/checker/priv/static/css/app.css" />
-      <change beforePath="$PROJECT_DIR$/checker/priv/static/css/app.css.map" afterPath="$PROJECT_DIR$/checker/priv/static/css/app.css.map" />
-      <change beforePath="$PROJECT_DIR$/checker/priv/static/js/app.js" afterPath="$PROJECT_DIR$/checker/priv/static/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/checker/priv/static/js/app.js.map" afterPath="$PROJECT_DIR$/checker/priv/static/js/app.js.map" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/checker/assets/css/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/checker/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/assets/js/checker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checker/assets/js/checker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/.rebar3/erlcinfo" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/.rebar3/erlcinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cow_uri.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cow_uri.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_app.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_app.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_bstr.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_bstr.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_clock.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_clock.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_handler.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_handler.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_http.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_http.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_http_handler.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_http_handler.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_loop_handler.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_loop_handler.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_middleware.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_middleware.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_protocol.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_protocol.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_req.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_req.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_rest.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_rest.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_router.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_router.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_spdy.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_spdy.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_static.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_static.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_sub_protocol.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_sub_protocol.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_sup.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_sup.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_websocket.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_websocket.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_websocket_handler.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowboy/ebin/cowboy_websocket_handler.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/.rebar3/erlcinfo" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/.rebar3/erlcinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_cookie.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_cookie.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_date.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_date.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_http.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_http.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_http_hd.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_http_hd.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_http_te.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_http_te.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_mimetypes.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_mimetypes.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_multipart.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_multipart.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_qs.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_qs.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_spdy.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/cowlib/ebin/cow_spdy.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/.rebar3/erlcinfo" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/.rebar3/erlcinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_acceptor.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_acceptor.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_acceptors_sup.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_acceptors_sup.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_app.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_app.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_conns_sup.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_conns_sup.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_listener_sup.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_listener_sup.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_protocol.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_protocol.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_server.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_server.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_ssl.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_ssl.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_sup.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_sup.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_tcp.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_tcp.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_transport.beam" beforeDir="false" afterPath="$PROJECT_DIR$/checker/deps/ranch/ebin/ranch_transport.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/lib/checker_web/channels/games_channel.ex" beforeDir="false" afterPath="$PROJECT_DIR$/checker/lib/checker_web/channels/games_channel.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/lib/checker_web/templates/page/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/checker/lib/checker_web/templates/page/index.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/priv/static/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/checker/priv/static/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/priv/static/css/app.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/checker/priv/static/css/app.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/priv/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/checker/priv/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/priv/static/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/checker/priv/static/js/app.js.map" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -351,12 +66,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="game.html.eex" pinned="false" current-in-tab="true">
+      <file leaf-file-name="game.html.eex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/templates/page/game.html.eex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="234">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -364,9 +78,8 @@
       <file leaf-file-name="page_controller.ex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/controllers/page_controller.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="162">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -374,9 +87,47 @@
       <file leaf-file-name="games_channel.ex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/channels/games_channel.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state>
+              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/checker/assets/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+              <folding>
+                <element signature="e#645#674#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checker.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/checker/assets/js/checker.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="239" column="20" selection-start-line="239" selection-start-column="20" selection-end-line="239" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/checker/assets/css/app.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="9142" column="10" selection-start-line="9142" selection-start-column="10" selection-end-line="9142" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.html.eex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/templates/layout/app.html.eex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -384,9 +135,8 @@
       <file leaf-file-name="game_backup.ex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/checker/lib/checker/game_backup.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="396">
+              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -395,28 +145,7 @@
         <entry file="file://$PROJECT_DIR$/checker/lib/checker/application.ex">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_socket.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/channels/user_socket.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="router.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/router.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-              <folding />
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -424,29 +153,8 @@
       <file leaf-file-name="index.html.eex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/templates/page/index.html.eex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/checker/priv/static/css/app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/checker/lib/checker/game.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="594">
+              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -462,6 +170,8 @@
       <find>gameName</find>
       <find>game</find>
       <find>user_id</find>
+      <find>form_init</find>
+      <find>Joined successfully</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/checker/lib/checker</dir>
@@ -471,23 +181,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/checkers/assets/css/app.scss" />
         <option value="$PROJECT_DIR$/checker/lib/checker/game.ex" />
+        <option value="$PROJECT_DIR$/checker/lib/checker_web/templates/page/game.html.eex" />
+        <option value="$PROJECT_DIR$/checker/lib/checker/application.ex" />
+        <option value="$PROJECT_DIR$/checker/lib/checker_web/controllers/page_controller.ex" />
+        <option value="$PROJECT_DIR$/checker/priv/static/js/app.js" />
+        <option value="$PROJECT_DIR$/checker/lib/checker_web/channels/games_channel.ex" />
         <option value="$PROJECT_DIR$/checker/assets/js/checker.jsx" />
         <option value="$PROJECT_DIR$/checker/assets/css/app.scss" />
-        <option value="$PROJECT_DIR$/checker/lib/checker_web/templates/page/game.html.eex" />
         <option value="$PROJECT_DIR$/checker/lib/checker_web/templates/page/index.html.eex" />
-        <option value="$PROJECT_DIR$/checker/lib/checker/application.ex" />
-        <option value="$PROJECT_DIR$/checker/lib/checker_web/channels/games_channel.ex" />
-        <option value="$PROJECT_DIR$/checker/lib/checker_web/controllers/page_controller.ex" />
+        <option value="$PROJECT_DIR$/checker/assets/js/app.js" />
       </list>
     </option>
   </component>
@@ -497,32 +204,24 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="2563" />
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/checker/assets/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
-    <option name="width" value="1720" />
-    <option name="height" value="1413" />
+    <option name="width" value="1024" />
+    <option name="height" value="1125" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -678,14 +377,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -701,28 +399,12 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
@@ -732,24 +414,13 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -762,17 +433,21 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -780,9 +455,6 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -795,65 +467,47 @@
       <option name="presentableId" value="Default" />
       <updated>1521574850580</updated>
       <workItem from="1521574852069" duration="3406000" />
+      <workItem from="1522172698680" duration="12002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31100000" />
+    <option name="totallyTimeSpent" value="43102000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2563" y="27" width="1720" height="1413" extended-state="4" />
+    <frame x="0" y="27" width="2048" height="1125" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20465116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2744361" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32985386" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2117882" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32967034" />
+      <window_info id="Learn" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="DB Browser" order="3" />
+      <window_info anchor="bottom" id="DB Execution Console" order="8" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -861,10 +515,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/checkers/assets/js/memory.jsx" />
@@ -889,168 +539,85 @@
     <entry file="file://$PROJECT_DIR$/checker/priv/static/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
-          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/assets/css/app.css" />
     <entry file="file://$PROJECT_DIR$/checker/priv/static/css/app.css.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="sourcemapFileViewerProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/assets/css/phoenix.css" />
-    <entry file="file://$PROJECT_DIR$/checker/_build/dev/lib/checker/priv/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="41375" column="41" lean-forward="false" selection-start-line="41375" selection-start-column="41" selection-end-line="41375" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/checker/_build/dev/lib/checker/priv/static/js/app.js" />
     <entry file="file://$PROJECT_DIR$/checker/assets/css/font-awesome.css" />
     <entry file="file://$PROJECT_DIR$/checker/assets/css/bootstrap.css" />
     <entry file="file://$PROJECT_DIR$/checker/assets/node_modules/font-awesome/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
+          <first_editor />
           <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/assets/font-awesome/css/font-awesome.css" />
     <entry file="file://$PROJECT_DIR$/checker/config/config.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/config/dev.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/config/prod.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/endpoint.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/assets/js/socket.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/priv/static/css/bootstrap.css" />
     <entry file="file://$PROJECT_DIR$/checkers/assets/js/socket.js" />
     <entry file="file://$PROJECT_DIR$/checkers/assets/css/app.scss" />
-    <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/templates/layout/app.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding>
-            <marker date="1522108699411" expanded="true" signature="1311:1409" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/views/error_view.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/views/error_helpers.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker/assets/js/checker.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1516">
-          <caret line="137" column="90" lean-forward="false" selection-start-line="137" selection-start-column="82" selection-end-line="137" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker/priv/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37221" column="48" lean-forward="true" selection-start-line="37221" selection-start-column="48" selection-end-line="37221" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/views/layout_view.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/views/page_view.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding />
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/priv/static/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker/assets/css/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -1058,79 +625,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="45" column="15" lean-forward="true" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/templates/page/index.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker/game.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
-          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding />
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/channels/user_socket.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/router.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding />
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker/application.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker/game_backup.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="396">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/channels/games_channel.ex">
+    <entry file="file://$PROJECT_DIR$/checker/priv/static/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="144">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/controllers/page_controller.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="162">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/channels/games_channel.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/templates/layout/app.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/templates/page/game.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="234">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker/assets/css/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="9142" column="10" selection-start-line="9142" selection-start-column="10" selection-end-line="9142" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker/lib/checker_web/templates/page/index.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker/assets/js/checker.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="239" column="20" selection-start-line="239" selection-start-column="20" selection-end-line="239" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding>
+            <element signature="e#645#674#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
