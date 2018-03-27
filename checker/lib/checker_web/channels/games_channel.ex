@@ -27,11 +27,17 @@ defmodule CheckerWeb.GamesChannel do
     viewer_list = Map.keys(game.viewers)
     p_len = Kernel.length(player_list)+1
     v_len = Kernel.length(viewer_list)
+    cur_player = socket.assigns[:user_id]
+    cur_viewers = Map.keys(:maps.filter(fn _,v -> v == cur_player end, game.viewers))
     #it's a bit tricky here since 1 is for player one is 0 is for player 2
-    if (p_len < 3) do      
-      %{game | players: Map.put_new(game.players, (rem p_len, 2), socket.assigns[:user_id])}
-    else
-      %{game | viewers: Map.put_new(game.viewers, v_len, socket.assigns[:user_id])}
+    cond do
+      p_len == 1 ->
+        %{game | players: Map.put_new(game.players, (rem p_len, 2), cur_player)}
+      p_len == 2 && Map.get(game.players, 1) != cur_player ->
+        %{game | players: Map.put_new(game.players, (rem p_len, 2), cur_player)}
+      p_len >= 3 && Map.get(game.players, 0) != cur_player && Map.get(game.players, 1) != cur_player && Kernel.length(cur_viewers) == 0 ->
+        %{game | viewers: Map.put_new(game.viewers, v_len, cur_player)}
+      true -> game  
     end
   end
 
