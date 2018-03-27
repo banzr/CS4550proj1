@@ -20,7 +20,7 @@ class CheckerGame extends React.Component {
       force: false,
       winner: -1,
       players: [],
-      viewers: []
+      viewers: [],
       };
     this.player = props.player;
     this.channel.join()
@@ -93,7 +93,8 @@ class CheckerGame extends React.Component {
     }
   }
 
-  isValidSelect(id, val) {
+
+    isValidSelect(id, val) {
     if (val == 0) {
       return false;
     }
@@ -105,12 +106,12 @@ class CheckerGame extends React.Component {
   }
 
   restartGame() {
-    if (this.state.players[0] == this.player || this.state.players[1] == this.player) {
-      this.channel.push("reset", {})
-        .receive("ok", view => {
-          this.gotView(view.game)
-        });
-    }
+      if (this.state.players[0] == this.player || this.state.players[1] == this.player) {
+          this.channel.push("reset", {})
+              .receive("ok", view => {
+                  this.gotView(view.game)
+              });
+      }
   }
 
   render() {
@@ -120,7 +121,9 @@ class CheckerGame extends React.Component {
       <nav className="navbar navbar-light justify-content-between navbar-light text-dark chkr-nav">
           <a className="navbar-brand">
               <div className="form-inline">
-              <img src="/images/checkers_icon.png" width="56" height="56" className="d-inline-block align-top" alt=""></img>
+              <img src="/images/checkers_icon.png" width="56" height="56" className="d-inline-block align-top" alt="">
+
+              </img>
                   &nbsp;
                   <h1>Checkers</h1></div></a>
           <form className="form-inline">
@@ -135,8 +138,15 @@ class CheckerGame extends React.Component {
           <div className="jumbotron playmat">
               <div className="row">
               <div className="col-1">
-                  <h6>Current Turn: <span className="badge badge-primary">Player {this.state.turn}</span></h6>
-                  <h6>Game:<span className="badge badge-primary"> {gameName} </span></h6>
+
+                  <h6>Current Turn: <br></br> <h4><span className="badge badge-primary">
+                      { <CurrentPlayer state={this.state} /> }</span></h4></h6>
+
+                  <h6>Game: <br></br> <h4><span className="badge badge-primary"> {gameName} </span></h4></h6>
+
+                  <h6>Viewers: <br></br> </h6>
+                      <ViewerList state={this.state} />
+
               </div>
               <div className="col-9">
         <Board board={this.state.board} sendClick={this.selectTile.bind(this)} selectedTile={this.state.selectedTile}/>
@@ -149,8 +159,37 @@ class CheckerGame extends React.Component {
   }
 }
 
+
+function CurrentPlayer(params) {
+    let state = params.state;
+    let curr_plyr =  state.players[(state.turn - 1) ? 0 : 1];
+    return (! curr_plyr) ? "Awaiting match" : curr_plyr;
+}
+
+function ViewerList(params) {
+    let vs = Object.values(params.state.viewers);
+    let players = Object.values(params.state.players);
+
+    let vs_set = new Set(vs);
+    players.forEach(function (player) {
+        vs_set.delete(player);
+    });
+
+    let views = Array.from(vs_set);
+    console.log("List of viewers",vs);
+    console.log("set of viewers",vs_set);
+    if (!vs.length) { views = ["No viewers"] };
+
+    let listItems = _.map(views, (val, ii) => {
+        return <li className="list-group-item list-group-item-primary active" key={ii}> {val}</li>;
+    });
+    return (
+        <h6><ul className="list-group" id="viewer_list">{listItems}</ul></h6>
+    );
+}
+
 function Board(params) {
-  let board = params.board
+  let board = params.board;
   let tilesSet = _.map(board, (val, ii) => {
     return <Tile id={ii} val={val} key={ii} sendClick={params.sendClick} selectedTile={params.selectedTile}/>;
   });
@@ -162,7 +201,7 @@ function Board(params) {
 }
 
 function Tile(params) {
-  let id = params.id
+  let id = params.id;
   let color = (id%2 + Math.floor(id/8)) % 2 == 0 ? "red" : "black";
   let selection = (id == params.selectedTile ? " selected" : "");
 

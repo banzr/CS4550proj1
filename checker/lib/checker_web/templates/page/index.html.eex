@@ -5,8 +5,17 @@
 <br>
 <div class="row text-center">
   <div class="col">
-    <h3 id="index-page">Join a Game</h3>
-    <div class="chkr-centered input-group col-4">
+
+    <ul id="gamelist" class="list-group chkr-gamelist">
+      <li class="list-group-item active ">JOIN A GAME</li>
+
+
+
+    </ul>
+
+
+    <br>
+    <div class="chkr-centered input-group col-6">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon3">Game name:</span>
       </div>
@@ -17,5 +26,22 @@
       <input type="text" class="form-control" id="userName">
     </div>
     <br>
-    <button type="button"  onClick="location.href='/game/'+(document.getElementById('gameName').value || 'demo')+'/'+(document.getElementById('userName').value || 'unknown');" id="join"class="btn btn-dark btn-lg">Play</button>
+    <script>
+
+    function play() {
+
+        if ($('#gameName').val() && $('#userName').val()) {
+
+        location.href='/game/'
+            +(document.getElementById('gameName').value || 'demo')
+            +'/'+(document.getElementById('userName').value || 'unknown');
+        } else {
+            alert("Please provide a game and user name.");
+        }
+        }
+
+    </script>
+
+
+    <button type="button"  onClick="play()" id="join"class="btn btn-dark btn-lg">Play</button>
 

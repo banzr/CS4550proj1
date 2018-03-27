@@ -6328,6 +6328,10 @@ h1 {
   margin-bottom: 5vh;
   opacity: 0.9; }
 
+.chkr-gamelist {
+  max-width: 31%;
+  margin: 0 auto; }
+
 
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
