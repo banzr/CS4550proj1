@@ -41752,6 +41752,13 @@ var CheckerGame = function (_React$Component) {
       channel.on("player:joined", function (_ref2) {
         var game = _ref2.game;
 
+        _.map(game.players, function (p, ii) {
+          console.log("PLAYER " + ii + " " + p);
+        });
+        console.log("SUP?");
+        _.map(game.viewers, function (v, ii) {
+          console.log("VIEWER " + ii + " " + v);
+        });
         _this2.gotView(game);
       });
     }

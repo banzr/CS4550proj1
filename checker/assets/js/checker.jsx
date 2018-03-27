@@ -41,6 +41,13 @@ class CheckerGame extends React.Component {
       this.gotView(game);
     });
     channel.on("player:joined", ({game: game}) => {
+      _.map(game.players, (p, ii) => {
+        console.log("PLAYER "+ii+" "+p);
+      });
+      console.log("SUP?");
+      _.map(game.viewers, (v, ii) => {
+        console.log("VIEWER "+ii+" "+v);
+      });
       this.gotView(game);
     });    
   }
