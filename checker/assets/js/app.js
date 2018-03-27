@@ -25,8 +25,8 @@ import game_init from "./checker";
 function form_init() {
   let channel = socket.channel("games:164579235", {user_id: "Unknown form_init"});
   channel.join()
-         .receive("ok", resp => { console.log("Joined successfully", resp) })
-         .receive("error", resp => { console.log("app.init Unable to join", resp) });
+    .receive("ok", resp => { console.log("Joined successfully", resp) })
+    .receive("error", resp => { console.log("app.init Unable to join", resp); });
 }
 
 function start() {

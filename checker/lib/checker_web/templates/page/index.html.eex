@@ -1,5 +1,5 @@
 <br>
-<h1 class="text-light display-2">Checkers</h1>
+<h1 id="index-page" class="text-light display-2">Checkers</h1>
 
 <img class="logo-icon" src="/images/checkers_icon.png">
 <br>
@@ -8,8 +8,6 @@
 
     <ul id="gamelist" class="list-group chkr-gamelist">
       <li class="list-group-item active ">JOIN A GAME</li>
-
-
 
     </ul>
 
