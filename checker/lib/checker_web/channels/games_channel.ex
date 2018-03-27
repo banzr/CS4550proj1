@@ -8,16 +8,15 @@ defmodule CheckerWeb.GamesChannel do
     if authorized?(payload) do
       game = Checker.GameBackup.load(name) || Game.new()
       game = add_user(game, socket)
-
       socket = socket
       |> assign(:game, game)
       |> assign(:name, name)
       Checker.GameBackup.save(socket.assigns[:name], game)      
 
+      game_list = Checker.GameBackup.game_list()
       send(self, {:after_join, name})
 
-
-      {:ok, %{"join" => name, "game" => Game.client_view(game)}, socket}
+      {:ok, %{"join" => name, "game_list" => game_list}, socket}
     else
       {:error, %{reason: "unauthorized"}}
     end
@@ -69,7 +68,7 @@ defmodule CheckerWeb.GamesChannel do
 
     {:reply, {:ok, %{"game" => Game.client_view(game)}}, socket}
   end
-    
+
   # Add authorization logic here as required.
   defp authorized?(_payload) do
     true

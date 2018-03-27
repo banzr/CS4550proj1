@@ -12,8 +12,14 @@ defmodule Checker.GameBackup do
   end
 
   def load(name) do
-    Agent.get __MODULE__, fn state ->
+    Agent.get __MODULE__, fn state ->      
       Map.get(state, name)
+    end
+  end
+
+  def game_list() do
+    Agent.get __MODULE__, fn state ->
+      :maps.filter(fn name,game -> Kernel.length(Map.keys(game.players)) < 2 end, state)
     end
   end
 end

@@ -41185,7 +41185,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // paths "./socket" or full ones "web/static/js/socket".
 
 function form_init() {
-  var channel = _socket2.default.channel("games:demo", { user_id: "Unknown form_init" });
+  var channel = _socket2.default.channel("games:164579235", { user_id: "Unknown form_init" });
   channel.join().receive("ok", function (resp) {
     console.log("Joined successfully", resp);
   }).receive("error", function (resp) {
@@ -41306,6 +41306,13 @@ var CheckerGame = function (_React$Component) {
       channel.on("player:joined", function (_ref2) {
         var game = _ref2.game;
 
+        _.map(game.players, function (p, ii) {
+          console.log("PLAYER " + ii + " " + p);
+        });
+        console.log("SUP?");
+        _.map(game.viewers, function (v, ii) {
+          console.log("VIEWER " + ii + " " + v);
+        });
         _this2.gotView(game);
       });
     }
