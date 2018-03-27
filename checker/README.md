@@ -1,4 +1,4 @@
-# Memory
+# Checkers
 
 ## Development Instructions
 
